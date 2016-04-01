@@ -1,0 +1,36 @@
+extends ../pages/includes/_layout
+
+block content
+  #content
+    .row
+      .container
+        .col-md-10
+          h1 Todas as publicações
+        .col-md-2
+          a.margin-top-20.btn.btn-lg.btn-primary(href!="{{ route('posts.create') }}") Nova publicação
+    hr
+    .row
+      .container
+        .col-md-12
+          table.table
+            thead
+              th #
+              th Título
+              th Publicação
+              th Criada em
+              th 
+            tbody
+              | @foreach ($posts as $post)
+              tr
+                th {{ $post->id }}
+                td {{ $post->title }}
+                td {{ substr($post->body, 0, 50) }}{{ strlen($post->body)>50 ? '...' : '' }}
+                td {{ date('d M Y \à\s H:i', strtotime($post->created_at)) }}
+                td 
+                  a.btn.btn-default(href!="{{ route('posts.show', $post->id) }}") Ver
+                  |  
+                  a.btn.btn-default(href!="{{ route('posts.edit', $post->id) }}") Editar
+              | @endforeach
+          .text-center
+            | {!! $posts->links() !!}
+    hr

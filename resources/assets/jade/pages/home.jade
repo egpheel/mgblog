@@ -1,0 +1,60 @@
+extends includes/_layout
+
+block navbar
+  section.navbar
+    hr
+    ul
+      a(href="#")
+        li Categorias
+      a(href="#")
+        li Crónicas
+      a(href="#")
+        li Sobre
+      a(href="#")
+        li Contacto
+    hr
+    
+block content
+  section.content
+    .featured
+      hr
+      .img-wrap
+        img(src="/img/featured-temp.jpg", alt="Publicação em destaque")
+      hr
+      .featured-post-wrap
+        h2 Pelas ruas de Amesterdão
+        p As ruas de Amesterdão são na sua maioria compostas por bicicletas, ou veículos de duas rodas. Mas esta é uma via de carros e tram´s...tive por isso a sorte de apanhar Roger a pedalar pela vida e pela cidade.
+        a(href='#').read-more Ler mais
+    
+    .posts-wrap      
+      .posts    
+        | @foreach ($posts as $post)
+        .post
+          .post-info
+            p.date
+              time(datetime!='{{ $post->created_at->toAtomString() }}') {{ $post->date }}
+            h2 {{ $post->title }}
+          .post-img
+            img(src='/img/post-temp.jpg', alt='Publicação')
+          .post-info
+            p {{ $post->body }}
+            ul
+              a(href='#')
+                li Perspectivas
+              a(href='#')
+                li Música
+              a(href='#')
+                li Viver
+              a(href='#')
+                li Viajar
+          hr
+        | @endforeach
+        {!! $posts->render() !!}
+      
+      .sidebar
+        p Publicações recentes
+        ul
+          | @foreach ($recent_posts as $post)
+          a(href="#")
+            li {{ $post->title }}
+          | @endforeach

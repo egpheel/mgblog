@@ -1,0 +1,26 @@
+extends ../pages/includes/_layout
+  
+block content
+  #content
+    .row
+      | {!! Form::model($post, array('route' => ['posts.update', $post->id], 'method' => 'PUT')) !!}
+      .container-fluid
+        .col-md-9
+          .edit-form
+            | {{ Form::text('title', null, array('class' => 'form-control input-lg', 'placeholder' => 'Título')) }}
+            | {{ Form::textarea('body', null, array('class' => 'form-control', 'placeholder' => 'Publicação')) }}
+        .col-md-3
+          .sidebar
+            dl
+              dt Criada em:
+              dd {{ date('d M Y \à\s H:i:s', strtotime($post->created_at)) }}
+            dl
+              dt Última edição em:
+              dd {{ date('d M Y \à\s H:i:s', strtotime($post->updated_at)) }}
+            hr
+            .row
+              .col-sm-6
+                | {!! Html::linkRoute('posts.show', 'Cancelar', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
+              .col-sm-6
+                | {{ Form::submit('Guardar', array('class' => 'btn btn-success btn-block')) }}
+      | {!! Form::close() !!}

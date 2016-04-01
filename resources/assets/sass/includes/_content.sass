@@ -1,0 +1,194 @@
+.content
+  .featured
+    position: relative
+    margin: 50px auto
+
+    hr
+      width: 100%
+      margin: 5px 0
+      background: $featured-border
+
+    .img-wrap
+      height: 500px
+      overflow: hidden
+      position: relative
+
+      img
+        position: absolute
+        top: 50%
+        min-height: 100%
+        display: block
+        left: 50%
+        +transform(translate(-50%, -50%))
+        min-width: 100%
+
+    .featured-post-wrap
+      margin: 0 auto
+      +position(absolute, null 0 60px 0)
+      width: 70%
+      color: $featured-text
+
+      h2
+        font:
+          family: $blog-font
+          size: 48px
+        margin: 0
+
+      p
+        text-align: justify
+        font:
+          family: $primary-font
+          size: 24px
+          weight: 300
+        margin: 0 0 30px
+
+      .read-more
+        color: $featured-text
+        background: transparentize($read-more, 0.1)
+        text-transform: uppercase
+        text-decoration: none
+        font:
+          family: $primary-font
+          size: 24px
+          weight: 300
+        border-radius: 0px
+        padding: 10px 30px
+
+        &:hover
+          background: $read-more
+
+        &:active
+          background: transparentize($read-more, 0.1)
+
+  .posts-wrap
+    margin: 100px auto 0
+    width: 80%
+    box-shadow: 0 0 3px 1px $shadow
+    position: relative
+
+    .posts
+      width: 75%
+      padding: 25px
+      display: inline-block
+
+      .post
+        margin: 0 0 30px
+        width: 100%
+
+        .post-info
+          p.date
+            font:
+              family: $primary-font
+              size: 12px
+              weight: 700
+            text-transform: uppercase
+            color: $post-paragraph
+            margin: 0
+
+          a.title
+            color: $post-title
+
+            &:hover
+              color: transparentize($post-title, 0.1)
+
+          h2
+            font:
+              family: $blog-font
+              size: 42px
+            margin: 10px 0
+            color: $post-title
+
+          p
+            text-align: justify
+            font:
+              family: $primary-font
+              size: 20px
+              weight: 300
+            margin: 15px 0
+            color: $post-paragraph
+
+          ul
+            list-style-type: none
+            padding: 0
+            margin-top: 25px
+
+            a
+              margin: 0 20px 0 0
+              padding: 0
+
+            li
+              text-transform: uppercase
+              font:
+                family: $primary-font
+                size: 12px
+                weight: 700
+              display: inline-block
+              padding: 0
+              margin: 0
+
+        .post-img
+          height: 400px
+          overflow: hidden
+          position: relative
+
+          img
+            position: absolute
+            top: 50%
+            min-height: 100%
+            display: block
+            left: 50%
+            +transform(translate(-50%, -50%))
+            min-width: 100%
+
+    .sidebar
+      display: inline-block
+      width: 25%
+      +position(absolute, 0 0 null null)
+      padding: 25px
+
+      hr
+        margin: 30px auto
+
+      p
+        font:
+          family: $primary-font
+          size: 20px
+          weight: 300
+        color: $post-paragraph
+        margin-bottom: 15px
+
+      ul
+        list-style-type: none
+        padding: 0 10px
+
+        li
+          font-size: 14px
+          margin: 5px 0
+          padding: 0
+
+      .tags
+        li
+          text-transform: uppercase
+          font:
+            size: 0.7em
+            weight: 700
+          display: inline-block
+          background: $links
+          color: $bg
+          padding: 0 5px
+          border-radius: 3px
+
+          &:hover
+            background: transparentize($links, 0.2)
+
+#content
+  .margin-top-20
+    margin-top: 20px
+
+  .edit-form
+    margin: 35px
+
+#create
+  .form-wrap
+    .btn
+      margin: 15px 0 100px

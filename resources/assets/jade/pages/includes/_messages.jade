@@ -1,0 +1,14 @@
+| @if (Session::has('success'))
+.alert.alert-success(role='alert')
+  strong Successo: 
+  | {{ Session::get('success') }}
+| @endif
+  
+| @if (count($errors) > 0)
+.alert.alert-danger(role='alert')
+  strong Erros:
+  ul
+    | @foreach ($errors->all() as $error)
+    li {{ $error }}
+    | @endforeach
+| @endif

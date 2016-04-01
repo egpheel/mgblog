@@ -1,0 +1,30 @@
+extends ../pages/includes/_layout
+  
+block content
+  #content
+    .row
+      .container-fluid
+        .col-md-9
+          .posts-wrap
+            .post
+              h1 {{ $post->title }}
+              p.lead {{ $post->body }}
+        .col-md-3
+          .sidebar
+            dl
+              dt Criada em:
+              dd {{ date('d M Y \à\s H:i:s', strtotime($post->created_at)) }}
+            dl
+              dt Última edição em:
+              dd {{ date('d M Y \à\s H:i:s', strtotime($post->updated_at)) }}
+            hr
+            .row
+              .col-sm-6
+                | {!! Html::linkRoute('posts.edit', 'Editar', array($post->id), array('class' => 'btn btn-primary btn-block')) !!}
+              .col-sm-6
+                | {!! Form::open(array('route' => ['posts.destroy', $post->id], 'method' => 'DELETE')) !!}
+                | {!! Form::submit('Apagar', array('class' => 'btn btn-danger btn-block')) !!}
+                | {!! Form::close() !!}
+            .row
+              .col-sm-12
+                | {!! Html::linkRoute('posts.index', 'Todas as publicações', array(), array('class' => 'btn btn-default btn-block margin-top-20')) !!}
