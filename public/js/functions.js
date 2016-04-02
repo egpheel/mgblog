@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+  $(window).scroll(function() {
+    stickySidebar();
+  });
+
   (function(){
 
       var loading_options = {
@@ -15,10 +20,6 @@ $(document).ready(function() {
         bufferPx: 1000
       });
   })();
-});
-
-$(window).scroll(function() {
-  stickySidebar();
 });
 
 function stickySidebar() {

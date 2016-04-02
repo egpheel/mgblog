@@ -15,14 +15,18 @@
 
 @section('content')
   <section class="content">
-    <div class="posts-wrap">
-      <div class="posts">
-        <h1>Arquivo de {{ $archive_date }}</h1>
+    <div class="posts-wrap row">
+      <div class="col-md-9">
+        <div class="posts">
+          <h1>Arquivo de {{ $archive_date }}</h1>
 
-        @include('partials._posts')
+          @include('partials._posts')
 
+        </div>
       </div>
-      @include('partials._sidebar')
+      <div class="col-md-3">
+        @include('partials._sidebar')
+      </div>
     </div>
   </section>
 
