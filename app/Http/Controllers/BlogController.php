@@ -13,7 +13,7 @@ class BlogController extends Controller
     public function getPublicacao($year, $month, $slug)
     {
       try {
-        $post = Post::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('slug', '=', $slug)->first();
+        $post = Post::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('slug', '=', $slug)->published()->first();
 
         $date = $post->created_at->day . ' ' . translateMonth($post->created_at->month) . ' ' . $post->created_at->year;
 
@@ -27,7 +27,7 @@ class BlogController extends Controller
 
     public function getArchive($year, $month)
     {
-      $posts = Post::latest()->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->paginate(5);
+      $posts = Post::latest('publish_at')->published()->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->paginate(5);
 
       foreach ($posts as $post) {
         $date = $post->created_at->day . ' ' . translateMonth($post->created_at->month) . ' ' . $post->created_at->year;

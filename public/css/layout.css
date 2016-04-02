@@ -253,7 +253,13 @@ textarea {
 #content .edit-form {
   margin: 35px; }
 
+#create .form-wrap .form-control {
+  margin: 0px auto 15px; }
+
 #create .form-wrap .btn {
-  margin: 15px 0 100px; }
+  margin: 0px auto 100px; }
+
+#create .form-wrap label {
+  margin: 15px auto 0px; }
 
 /*# sourceMappingURL=layout.css.map */

@@ -127,6 +127,7 @@ class PostController extends Controller
     $post->title = $request->title;
     $post->slug = str_slug($request->title, '-');
     $post->body = $request->body;
+    $post->publish_at = $request->publish_at;
 
     $post->save();
 
@@ -138,12 +139,17 @@ class PostController extends Controller
    */
   private function updatePost(Request $request, $id)
   {
-    $this->validate($request, array('title' => 'required|max:255', 'body' => 'required'));
-
     $post = Post::find($id);
 
-    $post->title = $request->input('title');
-    $post->body = $request->input('body');
+    if ($request->input('title') == $post->title) {
+      $this->validate($request, array('title' => 'required|max:255', 'body' => 'required'));
+    } else {
+      $this->validate($request, array('title' => 'required|max:255|unique:posts,title', 'body' => 'required'));
+    }
+
+    $post->title = $request->title;
+    $post->body = $request->body;
+    $post->publish_at = $request->publish_at;
 
     $post->save();
   }
