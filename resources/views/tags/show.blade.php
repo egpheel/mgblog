@@ -16,7 +16,7 @@
     <div class="posts-wrap row">
       <div class="col-md-9">
         <div class="posts">
-          <h1>Arquivo de {{ $archive_date }}</h1>
+          <h1>{{ ucfirst($tags->name) }}</h1>
 
           @include('partials._posts')
 

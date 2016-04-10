@@ -64,7 +64,8 @@
     margin: 100px auto 0
     width: 80%
     box-shadow: 0 0 3px 1px $shadow
-    position: relative
+    //position: relative
+    +display(flex)
 
     .posts
       padding: 25px
@@ -143,6 +144,7 @@
     .sidebar
       +position(absolute, 0 0 null null)
       padding: 25px
+      +transition(0.3s ease-in-out)
 
       hr
         margin: 30px auto

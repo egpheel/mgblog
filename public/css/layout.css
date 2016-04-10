@@ -156,7 +156,13 @@ textarea {
   margin: 100px auto 0;
   width: 80%;
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
-  position: relative; }
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex; }
   .content .posts-wrap .posts {
     padding: 25px;
     display: inline-block;
@@ -219,7 +225,8 @@ textarea {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 25px; }
+    padding: 25px;
+    transition: 0.3s ease-in-out; }
     .content .posts-wrap .sidebar hr {
       margin: 30px auto; }
     .content .posts-wrap .sidebar p {

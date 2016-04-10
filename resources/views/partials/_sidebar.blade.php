@@ -11,7 +11,7 @@
   <p>Categorias</p>
   <ul class='tags'>
     @foreach ($tags as $tag)
-      <a href="#">
+      <a href="{{ route('blog.tags', ['tag' => $tag->name]) }}">
         <li>{{ $tag->name }}</li>
       </a>
     @endforeach

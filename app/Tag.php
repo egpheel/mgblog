@@ -17,4 +17,9 @@ class Tag extends Model
   {
     return $this->belongsToMany('App\Post');
   }
+
+  public function getPostsPaginatedAttribute()
+  {
+    return $this->posts()->paginate(5);
+  }
 }

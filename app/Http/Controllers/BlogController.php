@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Post;
+use App\Tag;
 use Carbon\Carbon;
 
 class BlogController extends Controller
@@ -40,4 +41,12 @@ class BlogController extends Controller
       return view('archives.show')->with(compact('posts', 'archive_date'));
     }
 
+    public function getTag($tag)
+    {
+      $tags = Tag::where('name', $tag)->first();
+
+      $posts = $tags->posts_paginated;
+
+      return view('tags.show', compact('tags', 'posts'));
+    }
 }
