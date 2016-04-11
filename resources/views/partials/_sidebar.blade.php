@@ -11,9 +11,11 @@
   <p>Categorias</p>
   <ul class='tags'>
     @foreach ($tags as $tag)
-      <a href="{{ route('blog.tags', ['tag' => $tag->name]) }}">
-        <li>{{ $tag->name }}</li>
-      </a>
+      @if (!$tag->posts->isEmpty())
+        <a href="{{ route('blog.tags', ['tag' => $tag->name]) }}">
+          <li>{{ $tag->name }}</li>
+        </a>
+      @endif
     @endforeach
   </ul>
   <hr>

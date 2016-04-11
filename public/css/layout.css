@@ -222,9 +222,6 @@ textarea {
           transform: translate(-50%, -50%);
           min-width: 100%; }
   .content .posts-wrap .sidebar {
-    position: absolute;
-    top: 0;
-    right: 0;
     padding: 25px;
     transition: 0.3s ease-in-out; }
     .content .posts-wrap .sidebar hr {

@@ -43,6 +43,7 @@ class Post extends Model
 
   /**
    * Get the tags associated with the given post.
+   * Usage: e.g. $post->tags
    */
 
   public function tags()

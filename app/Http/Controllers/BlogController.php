@@ -20,7 +20,7 @@ class BlogController extends Controller
 
         $post->date = $date;
 
-        return view('blog.publicacao')->with(compact('post'));
+        return view('blog.publicacao', compact('post'));
       } catch (\Exception $e) {
         abort(404);
       }
@@ -38,7 +38,11 @@ class BlogController extends Controller
 
       $archive_date = translateMonth($month) . ' ' . $year;
 
-      return view('archives.show')->with(compact('posts', 'archive_date'));
+      if ($posts->isEmpty()) {
+        abort(404);
+      } else {
+        return view('archives.show')->with(compact('posts', 'archive_date'));
+      }
     }
 
     public function getTag($tag)
@@ -47,6 +51,10 @@ class BlogController extends Controller
 
       $posts = $tags->posts_paginated;
 
-      return view('tags.show', compact('tags', 'posts'));
+      if ($posts->isEmpty()) {
+        abort(404);
+      } else {
+        return view('tags.show', compact('tags', 'posts'));
+      }
     }
 }

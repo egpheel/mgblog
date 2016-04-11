@@ -37,7 +37,9 @@ class ViewComposerServiceProvider extends ServiceProvider
           return translateMonth($date->created_at->month) . ' ' . $date->created_at->format('Y');
         });
 
-        $tags = Tag::orderByRaw('RAND()')->take(10)->get();
+        $tags = Tag::with(['posts' => function($query) {
+          $query->published();
+        }])->orderByRaw('RAND()')->take(10)->get();
 
         $view->with(compact('recent_posts', 'archives', 'tags'));
       });

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Tag extends Model
 {
@@ -12,14 +13,20 @@ class Tag extends Model
 
   /**
    * Get the posts associated with the given tag.
+   * Usage: e.g. $tag->posts
    */
   public function posts()
   {
     return $this->belongsToMany('App\Post');
   }
 
+  /**
+   * Get the posts associated with the given tag.
+   * Paginated version.
+   * Usage: e.g. $tag->posts_paginated
+   */
   public function getPostsPaginatedAttribute()
   {
-    return $this->posts()->paginate(5);
+    return $this->posts()->published()->paginate(5);
   }
 }
