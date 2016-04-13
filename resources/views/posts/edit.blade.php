@@ -17,7 +17,7 @@
 
   <div id="content">
     <div class="row">
-      {!! Form::model($post, array('route' => ['posts.update', $post->id], 'method' => 'PUT')) !!}
+      {!! Form::model($post, array('route' => ['posts.update', $post->id], 'method' => 'PUT', 'files' => true)) !!}
         <div class="container-fluid">
           <div class="col-md-9">
             <div class="edit-form">

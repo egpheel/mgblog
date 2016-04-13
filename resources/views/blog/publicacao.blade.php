@@ -26,7 +26,7 @@
               <h2>{{ $post->title }}</h2>
             </div>
             <div class="post-img">
-              <img src="/img/post-temp.jpg" alt="Publicação">
+              <img src="/{{ $post->photo }}" alt="Publicação">
             </div>
             <div class="post-info">
               <p>{!! nl2br(e($post->body)) !!}</p>

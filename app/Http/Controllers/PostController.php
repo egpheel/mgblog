@@ -120,13 +120,20 @@ class PostController extends Controller
    */
   private function createPost(Request $request)
   {
-    $this->validate($request, array('title' => 'required|max:255|unique:posts,title', 'body' => 'required'));
+    $this->validate($request, array('photo' => 'required|image', 'title' => 'required|max:255|unique:posts,title', 'body' => 'required', 'tag_list' => 'required'));
+
+    $photo = $request->file('photo');
+    $photoName = time() . $photo->getClientOriginalName();
+    $path = "photos/";
+
+    $photo->move($path, $photoName);
 
     $post = new Post;
 
     $post->title = $request->title;
     $post->slug = str_slug($request->title, '-');
     $post->body = $request->body;
+    $post->photo = $path . $photoName;
     $post->publish_at = $request->publish_at;
 
     $post->save();
@@ -140,6 +147,18 @@ class PostController extends Controller
   private function updatePost(Request $request, $id)
   {
     $post = Post::find($id);
+
+    if ($request->hasFile('photo')) {
+      $this->validate($request, array('photo' => 'required|image'));
+
+      $photo = $request->file('photo');
+      $photoName = time() . $photo->getClientOriginalName();
+      $path = "photos/";
+
+      $photo->move($path, $photoName);
+
+      $post->photo = $path . $photoName;
+    }
 
     if ($request->input('title') == $post->title) {
       $this->validate($request, array('title' => 'required|max:255', 'body' => 'required'));

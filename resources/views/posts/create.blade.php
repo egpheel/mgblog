@@ -23,7 +23,7 @@
       </div>
       <div class="col-md-6 col-md-offset-3">
         <div class="form-wrap">
-          {!! Form::model($post = new \App\Post, array('route' => 'posts.store', 'data-parsley-validate' => '')) !!}
+          {!! Form::model($post = new \App\Post, array('route' => 'posts.store', 'data-parsley-validate' => '', 'files' => true)) !!}
           @include('partials._form')
           {{ Form::submit('Publicar', array('class' => 'btn btn-lg btn-block btn-success')) }}
           {!! Form::close() !!}
