@@ -109,6 +109,8 @@ class PostController extends Controller
   {
     $post = Post::find($id);
 
+    File::delete($post->photo);
+
     $post->delete();
 
     Session::flash('success', 'A publicação foi apagada com sucesso.');
