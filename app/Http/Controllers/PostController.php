@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Tag;
 use Session;
+use File;
 
 class PostController extends Controller
 {
@@ -150,6 +151,8 @@ class PostController extends Controller
 
     if ($request->hasFile('photo')) {
       $this->validate($request, array('photo' => 'required|image'));
+
+      File::delete($post->photo);
 
       $photo = $request->file('photo');
       $photoName = time() . $photo->getClientOriginalName();
