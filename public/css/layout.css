@@ -151,14 +151,22 @@ textarea {
       font-family: "Volkhov", serif;
       font-size: 48px;
       margin: 0;
-      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5); }
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px; }
     .content .featured .featured-post-wrap p {
       text-align: justify;
       font-family: "Open Sans", sans-serif;
       font-size: 24px;
       font-weight: 300;
       margin: 0 0 30px;
-      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5); }
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px; }
 
 .content .posts-wrap {
   margin: 100px auto 0;
