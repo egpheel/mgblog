@@ -15,6 +15,7 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+      $this->composeFeatured();
       $this->composeSidebar();
     }
 
@@ -28,6 +29,21 @@ class ViewComposerServiceProvider extends ServiceProvider
         //
     }
 
+    /**
+     * Feeds home.blade.php with the currently Featured post.
+     */
+    private function composeFeatured()
+    {
+      view()->composer('pages.home', function($view) {
+        $featured = Post::where('featured', 1)->first();
+
+        $view->with(compact('featured'));
+      });
+    }
+
+    /**
+     * Feeds _sidebar.blade.php with the required variables.
+     */
     private function composeSidebar()
     {
       view()->composer('partials._sidebar', function($view) {

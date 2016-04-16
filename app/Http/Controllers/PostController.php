@@ -139,6 +139,15 @@ class PostController extends Controller
     $post->photo = $path . $photoName;
     $post->publish_at = $request->publish_at;
 
+    if ($request->featured == '1') {
+      $currently_featured = Post::where('featured', 1)->first();
+      $currently_featured->featured = false;
+      $currently_featured->save();
+      $post->featured = true;
+    } else {
+      $post->featured = false;
+    }
+
     $post->save();
 
     $this->syncTags($post, $request->input('tag_list'));

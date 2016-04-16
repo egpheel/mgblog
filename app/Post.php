@@ -9,6 +9,16 @@ class Post extends Model
 {
   protected $dates = ['publish_at'];
 
+  public function scopeFeatured($query)
+  {
+    $query->where('featured', 1);
+  }
+
+  public function scopeUnfeatured($query)
+  {
+    $query->where('featured', 0);
+  }
+
   /**
    * Scope to show only the published items.
    */

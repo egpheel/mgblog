@@ -17,13 +17,13 @@
       <div class="featured">
         <hr>
         <div class="img-wrap">
-          <img src="/img/featured-temp.jpg" alt="Publicação em destaque">
+          <img src="/{{ $featured->photo }}" alt="Publicação em destaque">
         </div>
         <hr>
         <div class="featured-post-wrap">
-          <h2>Pelas ruas de Amesterdão</h2>
-          <p>As ruas de Amesterdão são na sua maioria compostas por bicicletas, ou veículos de duas rodas. Mas esta é uma via de carros e tram´s...tive por isso a sorte de apanhar Roger a pedalar pela vida e pela cidade.</p>
-          <a href="#" class="read-more">Ler mais</a>
+          <h2>{{ $featured->title }}</h2>
+          <p>{!! substr($featured->body, 0, 225) !!}{!! strlen($featured->body)>225 ? '...' : '' !!}</p>
+          <a href="{{ route('blog.publicacao', ['year' => $featured->created_at->year, 'month' => $featured->created_at->month, 'slug' => $featured->slug]) }}" class="read-more">Ler mais</a>
         </div>
       </div>
       <div class="posts-wrap row">
