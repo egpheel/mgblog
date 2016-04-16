@@ -141,8 +141,10 @@ class PostController extends Controller
 
     if ($request->featured == '1') {
       $currently_featured = Post::where('featured', 1)->first();
-      $currently_featured->featured = false;
-      $currently_featured->save();
+      if ($currently_featured->count()) {
+        $currently_featured->featured = false;
+        $currently_featured->save();
+      }
       $post->featured = true;
     } else {
       $post->featured = false;
