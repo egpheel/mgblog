@@ -14,18 +14,20 @@
 @section('content')
   <section class="content">
     <div class="row">
-      <div class="featured">
-        <hr>
-        <div class="img-wrap">
-          <img src="/{{ $featured->photo }}" alt="Publicação em destaque">
+      @if (!is_null($featured))
+        <div class="featured">
+          <hr>
+          <div class="img-wrap">
+            <img src="/{{ $featured->photo }}" alt="Publicação em destaque">
+          </div>
+          <hr>
+          <div class="featured-post-wrap">
+            <h2>{{ $featured->title }}</h2>
+            <p>{!! substr($featured->body, 0, 225) !!}{!! strlen($featured->body)>225 ? '...' : '' !!}</p>
+            <a href="{{ route('blog.publicacao', ['year' => $featured->created_at->year, 'month' => $featured->created_at->month, 'slug' => $featured->slug]) }}" class="read-more">Ler mais</a>
+          </div>
         </div>
-        <hr>
-        <div class="featured-post-wrap">
-          <h2>{{ $featured->title }}</h2>
-          <p>{!! substr($featured->body, 0, 225) !!}{!! strlen($featured->body)>225 ? '...' : '' !!}</p>
-          <a href="{{ route('blog.publicacao', ['year' => $featured->created_at->year, 'month' => $featured->created_at->month, 'slug' => $featured->slug]) }}" class="read-more">Ler mais</a>
-        </div>
-      </div>
+      @endif
       <div class="posts-wrap row">
         <div class="col-md-9">
           <div class="posts">

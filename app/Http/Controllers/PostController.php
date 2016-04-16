@@ -139,16 +139,7 @@ class PostController extends Controller
     $post->photo = $path . $photoName;
     $post->publish_at = $request->publish_at;
 
-    if ($request->featured == '1') {
-      $currently_featured = Post::where('featured', 1)->first();
-      if (!is_null($currently_featured)) {
-        $currently_featured->featured = false;
-        $currently_featured->save();
-      }
-      $post->featured = true;
-    } else {
-      $post->featured = false;
-    }
+    $this->saveFeatured($request, $post);
 
     $post->save();
 
@@ -186,7 +177,26 @@ class PostController extends Controller
     $post->body = $request->body;
     $post->publish_at = $request->publish_at;
 
+    $this->saveFeatured($request, $post);
+
     $post->save();
+  }
+
+  /**
+   * Change the featured status.
+   */
+  private function saveFeatured(Request $request, Post $post)
+  {
+    if ($request->featured == '1') {
+      $currently_featured = Post::where('featured', 1)->first();
+      if (!is_null($currently_featured)) {
+        $currently_featured->featured = false;
+        $currently_featured->save();
+      }
+      $post->featured = true;
+    } else {
+      $post->featured = false;
+    }
   }
 
   /**
