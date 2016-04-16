@@ -25,7 +25,7 @@
               </p>
               <h2>{{ $post->title }}</h2>
             </div>
-            <div class="post-img">
+            <div class="post-img-full">
               <img src="/{{ $post->photo }}" alt="Publicação">
             </div>
             <div class="post-info">

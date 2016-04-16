@@ -10,7 +10,12 @@
       <img src="/{{ $post->photo }}" alt="Publicação">
     </div>
     <div class="post-info">
-      <p>{!! nl2br(e($post->body)) !!}</p>
+      <p>{!! substr(nl2br(e($post->body)), 0, 500) !!}{!! strlen(nl2br(e($post->body)))>500 ? '...' : '' !!}</p>
+      @if (strlen(nl2br(e($post->body)))>500)
+        <div class="read-more-container">
+          <a href="{{ route('blog.publicacao', ['year' => $post->created_at->year, 'month' => $post->created_at->month, 'slug' => $post->slug]) }}" class="read-more btn-block">Ler mais</a>
+        </div>
+      @endif
       @unless ($post->tags->isEmpty())
         <ul>
           @foreach ($post->tags as $tag)

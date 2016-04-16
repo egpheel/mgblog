@@ -25,3 +25,23 @@ textarea
 .row
   margin-left: 0
   margin-right: 0
+
+.read-more
+  color: $featured-text
+  background: transparentize($read-more, 0.1)
+  text-transform: uppercase
+  text-decoration: none
+  text-align: center
+  font:
+    family: $primary-font
+    size: 24px
+    weight: 300
+  border-radius: 0px
+  padding: 10px 30px
+
+  &:hover
+    background: $read-more
+    color: $featured-text
+
+  &:active
+    background: transparentize($read-more, 0.1)
