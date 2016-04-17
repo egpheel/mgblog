@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', '- Categorias')
+@section('title', '- Arquivo')
 
 @section('navbar')
   @include('partials._navbar')
@@ -19,7 +19,7 @@
                 @foreach ($arc as $posts=>$post)
                   <li>
                     <div class="archive-post">
-                      <a href="#">{{ $post->title }}</a>
+                      <a href="{{ route('blog.publicacao', ['year' => $post->created_at->year, 'month' => $post->created_at->month, 'slug' => $post->slug]) }}">{{ $post->title }}</a>
                       <time class="date" datetime="{{ $post->created_at->toAtomString() }}">{{ $post->date }}</time>
                     </div>
                   </li>
