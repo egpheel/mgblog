@@ -52,13 +52,16 @@ html, body {
 a {
   color: #d78383; }
   a:hover {
-    color: rgba(215, 131, 131, 0.8);
+    color: rgba(215, 131, 131, 0.8); }
+  a:hover, a:active, a:visited, a:link {
     text-decoration: none; }
+  a:visited {
+    color: #d78383; }
 
 hr {
   border: 0px;
   height: 1px;
-  background: #b6b5af;
+  background: rgba(182, 181, 175, 0.7);
   width: 50%;
   margin: 50px auto; }
 
@@ -71,7 +74,7 @@ textarea {
 
 .read-more {
   color: white;
-  background: rgba(231, 70, 70, 0.9);
+  background: rgba(231, 70, 70, 0.8);
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -79,12 +82,16 @@ textarea {
   font-size: 24px;
   font-weight: 300;
   border-radius: 0px;
-  padding: 10px 30px; }
+  padding: 10px 30px;
+  transition: 0.2s ease-in-out; }
   .read-more:hover {
     background: #e74646;
+    color: white;
+    transition: 0.2s ease-in-out; }
+  .read-more:hover, .read-more:active, .read-more:visited, .read-more:link {
+    text-decoration: none; }
+  .read-more:visited {
     color: white; }
-  .read-more:active {
-    background: rgba(231, 70, 70, 0.9); }
 
 .form-margin-top {
   margin: 15px auto 0px; }
@@ -143,7 +150,7 @@ textarea {
     margin: 0 auto;
     position: absolute;
     right: 0;
-    bottom: 60px;
+    bottom: 100px;
     left: 0;
     width: 70%;
     color: white; }
@@ -291,5 +298,37 @@ textarea {
 
 #create .form-wrap label {
   margin: 15px auto 0px; }
+
+.archive h1 {
+  font-family: "Volkhov", serif;
+  font-size: 42px;
+  text-align: center;
+  margin: 10px 0 40px 0;
+  color: #333333; }
+
+.archive h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  margin: 10px 0;
+  color: #333333; }
+
+.archive ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px; }
+  .archive ul li .archive-post {
+    margin: 5px auto auto 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 300; }
+    .archive ul li .archive-post .date {
+      display: inline-block;
+      font-family: "Open Sans", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #7a7a7a;
+      margin: 0; }
 
 /*# sourceMappingURL=layout.css.map */

@@ -1,17 +1,17 @@
 <section class="navbar">
   <hr>
   <ul>
-    <a href="\">
+    <a href="/">
       <li>Blog</li>
     </a>
-    <a href="#">
+    <a href="/tags">
       <li>Categorias</li>
     </a>
-    <a href="#">
-      <li>Sobre</li>
+    <a href="/arquivo">
+      <li>Arquivo</li>
     </a>
     <a href="#">
-      <li>Contacto</li>
+      <li>Sobre mim</li>
     </a>
   </ul>
   <hr>

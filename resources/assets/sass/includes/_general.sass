@@ -10,12 +10,17 @@ a
 
   &:hover
     color: transparentize($links, 0.2)
+
+  &:hover, &:active, &:visited, &:link
     text-decoration: none
+
+  &:visited
+    color: $links
 
 hr
   border: 0px
   height: 1px
-  background: $hr-color
+  background: transparentize($hr-color, 0.3)
   width: 50%
   margin: 50px auto
 
@@ -28,7 +33,7 @@ textarea
 
 .read-more
   color: $featured-text
-  background: transparentize($read-more, 0.1)
+  background: transparentize($read-more, 0.2)
   text-transform: uppercase
   text-decoration: none
   text-align: center
@@ -38,13 +43,18 @@ textarea
     weight: 300
   border-radius: 0px
   padding: 10px 30px
+  +transition(0.2s ease-in-out)
 
   &:hover
     background: $read-more
     color: $featured-text
+    +transition(0.2s ease-in-out)
 
-  &:active
-    background: transparentize($read-more, 0.1)
+  &:hover, &:active, &:visited, &:link
+    text-decoration: none
+
+  &:visited
+    color: $featured-text
 
 .form-margin-top
   margin: 15px auto 0px
