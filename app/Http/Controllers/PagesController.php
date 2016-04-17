@@ -31,6 +31,9 @@ class PagesController extends Controller {
     return view('pages.tags', compact('tags'));
   }
 
+  /**
+   * Get the archives page.
+   */
   public function getArchives()
   {
     $archives = Post::latest('publish_at')->published()->get()->groupBy(function($date) {
@@ -48,4 +51,11 @@ class PagesController extends Controller {
     return view('pages.arquivo', compact('archives'));
   }
 
+  /**
+   * Get the search results.
+   */
+  public function getResults(Request $request)
+  {
+    return $request;
+  }
 }
