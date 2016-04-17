@@ -26,7 +26,9 @@
         </ul>
       @endunless
     </div>
-    <hr>
+    @if($post != $posts->last())
+      <hr>
+    @endif
   </div>
 @endforeach
 {!! $posts->render() !!}

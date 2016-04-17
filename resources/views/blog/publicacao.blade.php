@@ -40,7 +40,6 @@
                 </ul>
               @endunless
             </div>
-            <hr>
           </div>
         </div>
       </div>
