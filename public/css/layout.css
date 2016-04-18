@@ -208,11 +208,10 @@ textarea {
           padding: 10px 14px 6px;
           background: rgba(231, 70, 70, 0.8);
           color: white;
-          transition: 0.1s ease-in-out;
+          transition: 0.2s ease-in-out;
           border-color: transparent; }
           .content .featured .featured-post-wrap .searchBox-flex .searchBox .searchBox-btn:hover {
             box-shadow: 0 0 8px #d78383;
-            border-color: #d78383;
             background: rgba(231, 70, 70, 0.9); }
     .content .featured .featured-post-wrap h2 {
       font-family: "Volkhov", serif;
