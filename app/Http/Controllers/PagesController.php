@@ -22,16 +22,6 @@ class PagesController extends Controller {
   }
 
   /**
-   * Get the tags page.
-   */
-  public function getTags()
-  {
-    $tags = Tag::all();
-
-    return view('pages.tags', compact('tags'));
-  }
-
-  /**
    * Get the archives page.
    */
   public function getArchives()
