@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title', '- Resultados da pesquisa')
+
 @section('scripts')
   <!--infinitescroll-->
   <script src="/js/infinitescroll/infinitescroll.js"></script>
