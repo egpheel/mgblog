@@ -125,26 +125,12 @@ textarea {
       padding: 10px 0;
       font-size: 12px;
       font-family: "Open Sans", sans-serif; }
-  .navbar .searchForm {
-    color: #7a7a7a; }
-    .navbar .searchForm .searchBox {
-      text-transform: uppercase;
-      font-size: 12px;
-      font-family: "Open Sans", sans-serif;
-      padding: 0;
-      margin: 0;
-      border: 0;
-      border-bottom: 1px solid #b6b5af;
-      width: 57px;
-      color: #7a7a7a; }
-    .navbar .searchForm .btn {
-      display: none; }
 
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-    -webkit-transform: translateY(50px);
-    transform: translateY(50px); }
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px); }
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -153,8 +139,8 @@ textarea {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    -webkit-transform: translateY(50px);
-    transform: translateY(50px); }
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px); }
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -184,12 +170,50 @@ textarea {
     margin: 0 auto;
     position: absolute;
     right: 0;
-    bottom: 100px;
+    bottom: 75px;
     left: 0;
     width: 70%;
     color: white;
-    -webkit-animation: fadeIn 1.5s ease-in-out;
-    animation: fadeIn 1.5s ease-in-out; }
+    -webkit-animation: fadeIn 0.8s ease-out;
+    animation: fadeIn 0.8s ease-out; }
+    .content .featured .featured-post-wrap .searchBox-flex {
+      height: 170px;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .content .featured .featured-post-wrap .searchBox-flex .searchBox {
+        border: 1px solid rgba(227, 224, 208, 0.5);
+        border-radius: 3px;
+        padding: 4px; }
+        .content .featured .featured-post-wrap .searchBox-flex .searchBox .searchBox-input {
+          text-align: center;
+          border-radius: 0;
+          font-family: "Open Sans", sans-serif;
+          font-size: 24px;
+          font-weight: 300;
+          padding: 25px;
+          border-color: transparent; }
+          .content .featured .featured-post-wrap .searchBox-flex .searchBox .searchBox-input:focus {
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 8px #d78383;
+            border-color: #d78383; }
+        .content .featured .featured-post-wrap .searchBox-flex .searchBox .searchBox-btn {
+          border-radius: 0;
+          font-size: 24px;
+          padding: 10px 14px 6px;
+          background: rgba(231, 70, 70, 0.8);
+          color: white;
+          transition: 0.1s ease-in-out;
+          border-color: transparent; }
+          .content .featured .featured-post-wrap .searchBox-flex .searchBox .searchBox-btn:hover {
+            box-shadow: 0 0 8px #d78383;
+            border-color: #d78383;
+            background: rgba(231, 70, 70, 0.9); }
     .content .featured .featured-post-wrap h2 {
       font-family: "Volkhov", serif;
       font-size: 48px;
