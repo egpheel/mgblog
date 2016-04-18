@@ -26,7 +26,7 @@
               <div class="searchBox">
                 {!! Form::open(['route' => 'search.results', 'method' => 'GET', 'class' => 'searchForm form-inline']) !!}
                 <div class="input-group">
-                  {!! Form::text('pesquisa', null, ['class' => 'searchBox-input form-control', 'placeholder' => 'Pesquisa']) !!}
+                  {!! Form::text('pesquisa', null, ['class' => 'searchBox-input form-control', 'placeholder' => 'Pesquisar']) !!}
                   <div class="input-group-btn">
                     {!! Form::button('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', ['type' => 'submit', 'class' => 'btn btn-default searchBox-btn']) !!}
                   </div>
