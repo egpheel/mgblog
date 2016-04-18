@@ -140,6 +140,26 @@ textarea {
     .navbar .searchForm .btn {
       display: none; }
 
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
 .content .featured {
   position: relative;
   margin: 50px auto; }
@@ -167,7 +187,9 @@ textarea {
     bottom: 100px;
     left: 0;
     width: 70%;
-    color: white; }
+    color: white;
+    -webkit-animation: fadeIn 1.5s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out; }
     .content .featured .featured-post-wrap h2 {
       font-family: "Volkhov", serif;
       font-size: 48px;
