@@ -13,6 +13,9 @@
     <a href="#">
       <li>Sobre</li>
     </a>
+    <a href="#">
+      <li>Pesquisar</li>
+    </a>
   </ul>
   <hr>
 </section>
