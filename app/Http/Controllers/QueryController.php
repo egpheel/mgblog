@@ -15,7 +15,23 @@ class QueryController extends Controller
 
     $query = $request->pesquisa;
 
-    $posts = Post::latest()->where('title', 'LIKE', '%' . $query . '%')->orWhere('body', 'LIKE', '%' . $query . '%')->published()->paginate(5);
+    $keywords = preg_split('/\s+/', $query);
+
+    foreach ($keywords as $key => $keyword) {
+      if (strlen($keyword) < 3) {
+        unset($keywords[$key]);
+      }
+    }
+
+    $posts = Post::latest()->where(function ($q) use ($keywords) {
+      foreach ($keywords as $keyword) {
+        $q->orWhere('title', 'LIKE', '%' . $keyword . '%');
+      }
+    })->orWhere(function ($q) use ($keywords) {
+      foreach ($keywords as $keyword) {
+        $q->orWhere('body', 'LIKE', '%' . $keyword . '%');
+      }
+    })->published()->paginate(5);
 
     return view('pages.results', compact('posts', 'query'));
   }
