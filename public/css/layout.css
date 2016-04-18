@@ -188,9 +188,9 @@ textarea {
       -ms-flex-pack: center;
       justify-content: center; }
       .content .featured .featured-post-wrap .searchBox-flex .searchBox {
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        background-color: rgba(0, 0, 0, 0.1);
         border-radius: 3px;
-        padding: 4px; }
+        padding: 5px; }
         .content .featured .featured-post-wrap .searchBox-flex .searchBox .searchBox-input {
           text-align: center;
           border-radius: 0;
