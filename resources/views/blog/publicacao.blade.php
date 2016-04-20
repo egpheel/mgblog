@@ -29,7 +29,7 @@
               <img src="/{{ $post->photo }}" alt="Publicação">
             </div>
             <div class="post-info">
-              <p>{!! nl2br(e($post->body)) !!}</p>
+              <p>{!! html_entity_decode(nl2br(e($post->body))) !!}</p>
               @unless ($post->tags->isEmpty())
                 <ul>
                   @foreach ($post->tags as $tag)
