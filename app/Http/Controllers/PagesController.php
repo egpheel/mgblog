@@ -46,7 +46,7 @@ class PagesController extends Controller {
    */
   public function getPesquisar()
   {
-    return view('pages.pesquisar');
+    return view('pages.results', compact('post'));
   }
 
   /**

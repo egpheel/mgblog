@@ -8,10 +8,10 @@
 
 @section('content')
   <section class="content archive">
+    @include('partials._beautybar', ['page' => 'Arquivo'])
     <div class="posts-wrap row">
       <div class="col-md-9">
         <div class="posts">
-          <h1>Arquivo</h1>
           @foreach ($archives as $archive=>$arc)
             <h2>{{ $archive }}</h2>
             <ul>

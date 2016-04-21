@@ -13,10 +13,10 @@
 
 @section('content')
   <section class="content">
+    @include('partials._beautybar', ['page' => ucfirst($tags->name)])
     <div class="posts-wrap row">
       <div class="col-md-9">
         <div class="posts">
-          <h1>{{ ucfirst($tags->name) }}</h1>
 
           @include('partials._posts')
 

@@ -15,6 +15,7 @@
 
 @section('content')
   <section class="content">
+    @include('partials._beautybar')
     <div class="posts-wrap row">
       <div class="col-md-9">
         <div class="posts">
