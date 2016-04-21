@@ -313,7 +313,9 @@ textarea {
         .content .posts-wrap .posts .post .post-img img {
           position: absolute;
           top: 50%;
-          width: 65%;
+          width: auto;
+          height: auto;
+          min-height: 100%;
           min-height: 100%;
           display: block;
           left: 50%;
