@@ -68,6 +68,15 @@ hr {
 textarea {
   margin: 15px 0; }
 
+.trumbowyg-editor {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #7a7a7a; }
+
+.trumbowyg-button-pane {
+  background: #ececec; }
+
 .row {
   margin-left: 0;
   margin-right: 0; }
@@ -270,7 +279,7 @@ textarea {
         font-size: 42px;
         margin: 10px 0;
         color: #333333; }
-      .content .posts-wrap .posts .post .post-info p {
+      .content .posts-wrap .posts .post .post-info .post-paragraph {
         text-align: justify;
         font-family: "Open Sans", sans-serif;
         font-size: 20px;

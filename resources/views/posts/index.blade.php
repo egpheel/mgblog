@@ -26,7 +26,7 @@
               <tr>
                 <th>{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
-                <td>{{ substr($post->body, 0, 50) }}{{ strlen($post->body)>50 ? '...' : '' }}</td>
+                <td>{{ strip_tags(substr($post->body, 0, 50)) }}{{ strip_tags(strlen($post->body))>50 ? '...' : '' }}</td>
                 <td>{{ date('d M Y \à\s H:i', strtotime($post->created_at)) }}</td>
                 <td> <a href="{{ route('posts.show', $post->id) }}" class="btn btn-default">Ver</a> <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-default">Editar</a></td>
               </tr>@endforeach

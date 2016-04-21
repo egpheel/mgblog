@@ -5,25 +5,15 @@
 @section('stylesheets')
   <link rel="stylesheet" href="/css/parsley.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/js/trumbowyg/ui/trumbowyg.css">
 @endsection
 
 @section('scripts')
   <script src="/js/parsley/parsley.js"></script>
   <script src="/js/parsley/pt-pt.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
-  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script type="text/javascript">
-    tinymce.init({  selector: 'textarea',
-                    setup: function (editor) {
-                          editor.on('change', function () {
-                              editor.save();
-                          });
-                      },
-                    menubar: false,
-                    plugins: 'image',
-                    content_style: "p {text-align: justify; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 300}"
-    });
-  </script>
+  <script src="/js/trumbowyg/trumbowyg.js"></script>
+  <script src="/js/trumbowyg/langs/pt.min.js"></script>
 @endsection
 
 @section('content')
