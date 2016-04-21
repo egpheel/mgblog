@@ -8,7 +8,7 @@
     @endforeach
   </ul>
   <hr>
-  <p>Categorias</p>
+  <p>Mais categorias</p>
   <ul class='tags'>
     @foreach ($tags as $tag)
       @if (!$tag->posts->isEmpty())

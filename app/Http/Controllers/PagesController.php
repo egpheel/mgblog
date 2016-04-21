@@ -42,6 +42,14 @@ class PagesController extends Controller {
   }
 
   /**
+   * Get the search page.
+   */
+  public function getPesquisar()
+  {
+    return view('pages.pesquisar');
+  }
+
+  /**
    * Get the search results.
    */
   public function getResults(Request $request)

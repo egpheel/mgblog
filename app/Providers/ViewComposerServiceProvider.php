@@ -55,7 +55,7 @@ class ViewComposerServiceProvider extends ServiceProvider
 
         $tags = Tag::with(['posts' => function($query) {
           $query->published();
-        }])->orderByRaw('RAND()')->take(10)->get();
+        }])->orderByRaw('RAND()')->take(6)->get();
 
         $view->with(compact('recent_posts', 'archives', 'tags'));
       });

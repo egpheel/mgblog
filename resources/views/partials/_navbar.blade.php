@@ -10,7 +10,7 @@
     <a href="#">
       <li>Sobre</li>
     </a>
-    <a href="#">
+    <a href="/pesquisar">
       <li>Pesquisar</li>
     </a>
   </ul>
