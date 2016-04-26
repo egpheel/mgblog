@@ -340,7 +340,7 @@ textarea {
       padding: 10px;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px; }
-    .featured .featured-post-wrap p {
+    .featured .featured-post-wrap .featured-body {
       text-align: justify;
       font-family: "Open Sans", sans-serif;
       font-size: 24px;
