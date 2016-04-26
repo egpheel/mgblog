@@ -48,8 +48,8 @@
               <div class="author-img">
                 @if ($post->user->avatar_vid != '')
                   <video autoplay loop muted>
-                    <source src="/vid/marcogil-up.webm" type="video/webm">
-                    <source src="/vid/marcogil-up.mp4" type="video/mp4">
+                    <source src="/vid/{{ explode(';', $post->user->avatar_vid)[0] }}" type="video/webm">
+                    <source src="/vid/{{ explode(';', $post->user->avatar_vid)[1] }}" type="video/mp4">
                   </video>
                 @else
                   <img src="{{ $post->user->avatar }}">
