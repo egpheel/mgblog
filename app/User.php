@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar',
+        'name', 'email', 'password', 'avatar', 'avatar_vid', 'about',
     ];
 
     /**
@@ -23,4 +23,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the posts of a given user.
+     * Usage: e.g. $user->posts
+     */
+    public function posts()
+    {
+      return $this->hasMany('App\Post');
+    }
 }

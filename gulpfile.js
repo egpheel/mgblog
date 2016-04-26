@@ -15,6 +15,7 @@ elixir(function(mix) {
     mix.sass('layout.sass', 'public/css/layout.css');
     mix.browserSync({
       open: false,
-      proxy: 'marcogil.blog'
+      proxy: 'marcogil.blog',
+      notify: false
     });
 });

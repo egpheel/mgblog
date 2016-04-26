@@ -46,14 +46,18 @@
             <hr>
             <div class="author">
               <div class="author-img">
-                <video autoplay loop muted poster="marcogil-poster.jpg">
-                  <source src="/vid/marcogil-up.webm" type="video/webm">
-                  <source src="/vid/marcogil-up.mp4" type="video/mp4">
-                </video>
+                @if ($post->user->avatar_vid != '')
+                  <video autoplay loop muted>
+                    <source src="/vid/marcogil-up.webm" type="video/webm">
+                    <source src="/vid/marcogil-up.mp4" type="video/mp4">
+                  </video>
+                @else
+                  <img src="{{ $post->user->avatar }}">
+                @endif
               </div>
               <div class="author-desc">
                 <div class="name">
-                  O meu nome é Marco.
+                  O meu nome é {{ explode(' ', $post->user->name)[0] }}.
                 </div>
                 <div class="desc">
                   Um fotógrafo ou contador de histórias, essas histórias que por vezes são estórias, são também vidas com que me cruzo num quotidiano preenchido por gente.

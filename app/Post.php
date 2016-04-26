@@ -8,6 +8,7 @@ use Carbon\Carbon;
 class Post extends Model
 {
   protected $dates = ['publish_at'];
+  protected $fillable = ['user_id'];
 
   public function scopeFeatured($query)
   {
@@ -59,6 +60,24 @@ class Post extends Model
   public function tags()
   {
     return $this->belongsToMany('App\Tag')->withTimestamps();
+  }
+
+  /**
+   * Get the author of the given post.
+   * Usage: e.g. $post->user
+   */
+  public function user()
+  {
+    return $this->belongsTo('App\User');
+  }
+
+  /**
+   * Get the comments of the given post.
+   * Usage: e.g. $post->comments
+   */
+  public function comments()
+  {
+    return $this->hasMany('App\Comment');
   }
 
   /**

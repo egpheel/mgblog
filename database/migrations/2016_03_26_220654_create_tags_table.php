@@ -20,7 +20,7 @@ class CreateTagsTable extends Migration
 
         Schema::create('post_tag', function (Blueprint $table) {
           $table->integer('post_id')->unsigned()->index();
-          $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade'); // onDelete('cascade') means that if I delete a row on the referenced table, I'll delete the corresponding row on this table
+          $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
 
           $table->integer('tag_id')->unsigned()->index();
           $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');

@@ -10,6 +10,7 @@ use App\Post;
 use App\Tag;
 use Session;
 use File;
+use Auth;
 
 class PostController extends Controller
 {
@@ -23,7 +24,7 @@ class PostController extends Controller
   {
       $this->middleware('auth');
   }
-  
+
   /**
    * Display a listing of the resource.
    *
@@ -136,6 +137,8 @@ class PostController extends Controller
   {
     $this->validate($request, array('photo' => 'required|image', 'title' => 'required|max:255|unique:posts,title', 'body' => 'required', 'tag_list' => 'required'));
 
+    $user_id = $request->user()->id;
+
     $photo = $request->file('photo');
     $photoName = time() . $photo->getClientOriginalName();
     $path = "photos/";
@@ -151,6 +154,8 @@ class PostController extends Controller
     $post->publish_at = $request->publish_at;
 
     $this->saveFeatured($request, $post);
+
+    $post->user()->associate($user_id);
 
     $post->save();
 
