@@ -32,4 +32,6 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('tags/{tag}', ['as' => 'blog.tags', 'uses' => 'BlogController@getTag']);
   Route::resource('posts', 'PostController');
   Route::get('results', ['as' => 'search.results', 'uses' => 'QueryController@getResults']);
+  Route::auth();
+  Route::get('register', ['middleware' => 'regOnOff', 'uses' => 'Auth\AuthController@showRegistrationForm']);
 });

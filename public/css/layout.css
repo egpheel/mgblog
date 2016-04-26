@@ -152,6 +152,16 @@ textarea {
   .header p {
     margin: 0 auto 50px; }
 
+.login-logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(122, 122, 122, 0.4); }
+  .login-logout a {
+    color: rgba(122, 122, 122, 0.3); }
+
 .navbar {
   text-align: center; }
   .navbar hr {
