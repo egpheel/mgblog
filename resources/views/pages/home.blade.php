@@ -35,7 +35,7 @@
               </div>
             </div>
             <h2>{{ $featured->title }}</h2>
-            <div class="featured-body">{!! strip_tags(nl2br((substr($featured->body, 0, 225)))) !!}{!! strlen($featured->body)>225 ? '...' : '' !!}</div>
+            <div class="featured-body">{!! html_entity_decode(substr($featured->body, 0, 225)) !!}{!! strlen($featured->body)>225 ? '...' : '' !!}</div>
             <div class="text-center">
               <a href="{{ route('blog.publicacao', ['year' => $featured->created_at->year, 'month' => $featured->created_at->month, 'slug' => $featured->slug]) }}" class="read-more">Ler mais</a>
             </div>
