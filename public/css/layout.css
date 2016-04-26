@@ -139,6 +139,11 @@ textarea {
   -webkit-animation: none !important;
   animation: none !important; }
 
+.header-bar {
+  margin-top: 0;
+  height: 3px;
+  background-color: #d78383; }
+
 .header {
   text-align: center;
   font-family: "Volkhov", serif; }
@@ -154,7 +159,7 @@ textarea {
 
 .login-logout {
   position: absolute;
-  top: 0;
+  top: 3px;
   right: 0;
   font-size: 12px;
   text-transform: uppercase;

@@ -12,7 +12,8 @@
 @section('footer')
   <script type="text/javascript">
     $('textarea').trumbowyg({
-      lang: 'pt'
+      lang: 'pt',
+      removeformatPasted: true
     });
     $('#tag_list').select2({
       placeholder: 'Escolha uma tag',
