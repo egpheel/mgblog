@@ -6,6 +6,7 @@
       <div class="container">
         <div class="col-md-10">
           <h1>Todas as publicações</h1>
+          {{ Auth::user()->hasRole('admin') ? 'admin here!' : 'not admin' }}
         </div>
         <div class="col-md-2"><a href="{{ route('posts.create') }}" class="margin-top-20 btn btn-lg btn-primary">Nova publicação</a></div>
       </div>
