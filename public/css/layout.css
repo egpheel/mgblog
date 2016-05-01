@@ -160,35 +160,34 @@ textarea {
   .header p {
     margin: 0 auto 50px; }
 
-.login-logout {
-  position: absolute;
-  top: 3px;
-  right: 0;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: rgba(122, 122, 122, 0.4); }
-  .login-logout a {
-    color: rgba(122, 122, 122, 0.3); }
-
 .navbar {
   text-align: center; }
   .navbar hr {
     width: 800px;
     margin: 0px auto; }
-  .navbar ul {
+  .navbar ul.menu {
     list-style-type: none;
     margin: 0;
     padding: 0; }
-    .navbar ul li {
+    .navbar ul.menu .menu-btn {
       display: inline-block;
       margin: 0 20px;
       text-transform: uppercase;
       padding: 10px 0;
       font-size: 12px;
       font-family: "Open Sans", sans-serif; }
-    .navbar ul .pointer {
+    .navbar ul.menu .pointer {
       padding: 10px 20px;
-      margin: 0; }
+      margin: 0;
+      position: relative; }
+
+.dropdown-menu a {
+  text-transform: none;
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 300 !important; }
+  .dropdown-menu a:hover {
+    color: white !important;
+    background: rgba(231, 70, 70, 0.8) !important; }
 
 #content .margin-top-20 {
   margin-top: 20px; }

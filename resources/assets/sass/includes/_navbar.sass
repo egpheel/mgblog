@@ -5,12 +5,12 @@
     width: 800px
     margin: 0px auto
 
-  ul
+  ul.menu
     list-style-type: none
     margin: 0
     padding: 0
 
-    li
+    .menu-btn
       display: inline-block
       margin: 0 20px
       text-transform: uppercase
@@ -22,3 +22,15 @@
     .pointer
       padding: 10px 20px
       margin: 0
+      position: relative
+
+.dropdown-menu
+  a
+    text-transform: none
+    font:
+      family: $primary-font !important
+      weight: 300 !important
+
+    &:hover
+      color: $featured-text !important
+      background: transparentize($read-more, 0.2) !important

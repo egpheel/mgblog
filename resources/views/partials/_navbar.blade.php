@@ -1,35 +1,43 @@
 <section class="navbar">
   <hr>
-  <ul>
+  <ul class="menu">
     <a href="/">
-      <li>Blog</li>
+      <li class="menu-btn">Blog</li>
     </a>
     <a href="/arquivo">
-      <li>Arquivo</li>
+      <li class="menu-btn">Arquivo</li>
     </a>
     <a href="http://marcogil.pt">
-      <li>Sobre</li>
+      <li class="menu-btn">Sobre</li>
     </a>
     <a href="/pesquisar">
-      <li>Pesquisar</li>
+      <li class="menu-btn">Pesquisar</li>
     </a>
-    <li class="pointer">
+    <li class="menu-btn pointer">
       <div class="dropdown">
         @if (Auth::check())
-          <a href="" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <a href="" class="dropdown-toggle" id="userMenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             {{ Auth::user()->name }}
             <span class="caret"></span>
           </a>
-          <ul class="dropdown-menu" aria-labelleby="userMenu">
+          <ul class="dropdown-menu" aria-labelledby="userMenu">
+            @if (Auth::user()->hasRole('admin'))
+              <li><a href="/posts/create">Nova publicação</a></li>
+              <li><a href="/posts">Publicações</a></li>
+              <li role="separator" class="divider"></li>
+            @endif
+            <li><a href="#">Perfil</a></li>
+            <li role="separator" class="divider"></li>
             <li><a href="/logout">Sair</a></li>
           </ul>
         @else
-          <a href="" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <a href="" class="dropdown-toggle" id="userMenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Conta
             <span class="caret"></span>
           </a>
-          <ul class="dropdown-menu" aria-labelleby="userMenu">
+          <ul class="dropdown-menu" aria-labelledby="userMenu">
             <li><a href="/login">Iniciar sessão</a></li>
+            <li role="separator" class="divider"></li>
             <li><a href="/register">Criar conta</a></li>
           </ul>
         @endif
