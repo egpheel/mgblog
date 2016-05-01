@@ -139,6 +139,9 @@ textarea {
   -webkit-animation: none !important;
   animation: none !important; }
 
+.pointer {
+  cursor: pointer; }
+
 .header-bar {
   margin-top: 0;
   height: 3px;
@@ -183,6 +186,9 @@ textarea {
       padding: 10px 0;
       font-size: 12px;
       font-family: "Open Sans", sans-serif; }
+    .navbar ul .pointer {
+      padding: 10px 20px;
+      margin: 0; }
 
 #content .margin-top-20 {
   margin-top: 20px; }
@@ -377,6 +383,8 @@ textarea {
         text-transform: uppercase;
         color: #7a7a7a;
         margin: 0; }
+        .posts-wrap .posts .post .post-info p.date span {
+          color: rgba(122, 122, 122, 0.7); }
       .posts-wrap .posts .post .post-info a.title {
         color: #333333; }
         .posts-wrap .posts .post .post-info a.title:hover {

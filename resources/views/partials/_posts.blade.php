@@ -2,7 +2,7 @@
   <div class="post">
     <div class="post-info">
       <p class="date">
-        <time datetime="{{ $post->created_at->toAtomString() }}">{{ $post->date }}</time>
+        <time datetime="{{ $post->created_at->toAtomString() }}">{{ $post->date }}</time>, <span>por {{ $post->user->name }}</span>
       </p>
       <h2><a class='title' href="{{ route('blog.publicacao', ['year' => $post->created_at->year, 'month' => $post->created_at->month, 'slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
     </div>

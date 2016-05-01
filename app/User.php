@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Auth;
+use App\Role;
 
 class User extends Authenticatable
 {
@@ -52,5 +53,12 @@ class User extends Authenticatable
     public function hasRole($check)
     {
       return in_array($check, array_pluck($this->roles->toArray(), 'name'));
+    }
+
+    public function assignRole($role)
+    {
+      $role_id = Role::where('name', '=', $role)->first();
+
+      return $this->roles()->attach($role_id);
     }
 }

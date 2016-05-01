@@ -24,6 +24,9 @@
                 </li>
               @endforeach
             </ul>
+            @if($arc != $archives->last())
+              <hr>
+            @endif
           @endforeach
         </div>
       </div>

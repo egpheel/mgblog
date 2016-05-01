@@ -6,10 +6,13 @@
 </div>
 <div class="login-logout">
   @if (!Auth::check())
-    <a href="/login">Entrar</a>
+    <a href="/login">Iniciar sessão</a>
+    <a href="/register">Criar conta</a>
   @else
     Autenticado como {{ Auth::user()->name }}.
-    <a href="/posts">Publicações</a>,
+    @if(Auth::user()->hasRole('admin'))
+      <a href="/posts">Publicações</a>,
+    @endif
     <a href="/logout">Sair</a>
   @endif
 </div>
