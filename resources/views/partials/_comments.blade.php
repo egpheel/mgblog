@@ -12,7 +12,7 @@
               {{ $comment->user->name }}
             </div>
             <div class="date">
-              &#8211; <time>01/05/2016, 17:00</time>
+              &#8211; <time datetime="{{ $comment->updated_at->toAtomString() }}">{{ $comment->created_at->format('d/m/Y, H:i') }}</time>
             </div>
             <div class="comment">
               {{ $comment->text }}
