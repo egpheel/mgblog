@@ -112,6 +112,9 @@ textarea {
 
 .beauty-bar .img-wrap {
   height: 100px !important; }
+  .beauty-bar .img-wrap img {
+    min-height: 0;
+    min-width: 100%; }
 
 .beauty-bar .featured-post-wrap {
   bottom: 0 !important;
