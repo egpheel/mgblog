@@ -36,6 +36,15 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the comments of a given user.
+     * Usage: e.g. $user->comments
+     */
+    public function comments()
+    {
+      return $this->hasMany('App\Comment');
+    }
+
+    /**
      * Get the roles of a given user.
      * Usage: e.g. $user->roles
      */

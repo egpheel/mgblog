@@ -17,4 +17,12 @@ class Comment extends Model
   public function post() {
     return $this->belongsTo('App\Post');
   }
+
+  /**
+   * Get the owner of a given comment.
+   * Usage: e.g. $comment->user
+   */
+  public function user() {
+    return $this->belongsTo('App\User');
+  }
 }

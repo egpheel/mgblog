@@ -1,6 +1,12 @@
 @extends('layout')
 
+@section('stylesheets')
+  <link rel="stylesheet" href="/css/parsley.css">
+@endsection
+
 @section('scripts')
+  <script src="/js/parsley/parsley.js"></script>
+  <script src="/js/parsley/pt-pt.js"></script>
   <!--infinitescroll-->
   <script src="/js/infinitescroll/infinitescroll.js"></script>
   <!--my js-->
@@ -43,7 +49,6 @@
                 </ul>
               @endunless
             </div>
-            <hr>
             <div class="author">
               <div class="author-img">
                 @if ($post->user->avatar_vid != '')
@@ -64,7 +69,7 @@
                 </div>
               </div>
             </div>
-            <hr>
+            @include('../partials/_comments')
           </div>
         </div>
       </div>

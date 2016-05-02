@@ -163,6 +163,9 @@
   margin: 0 auto
   +display(flex)
   +align-items(center)
+  padding: 20px
+  border-top: 1px solid transparentize($hr-color, 0.5)
+  border-bottom: 1px solid transparentize($hr-color, 0.5)
 
   .author-img
     position: relative
@@ -197,3 +200,59 @@
       margin-top: 5px
       font-size: 18px
       color: transparentize($post-title, 0.3)
+
+.comments-wrap
+  margin-top: 100px
+
+  h2
+    font:
+      family: $primary-font
+      size: 32px
+      weight: 300
+    margin: 10px 0 30px
+    color: $post-title
+
+  .single-comment-wrap
+    margin-bottom: 50px
+    .single-comment
+      margin: 5px auto
+      padding: 15px
+      background: $comments
+      +display(flex)
+      +align-items(center)
+
+      .img
+        margin: 0 25px
+        border-radius: 50%
+        width: 128px
+        height: 128px
+        overflow: hidden
+
+      .info
+        width: 75%
+        padding: 20px
+        .name, .date
+          display: inline-block
+
+        .name
+          font:
+            family: $primary-font
+            weight: 300
+            size: 18px
+          color: transparentize($post-title, 0.2)
+
+        .date
+          font:
+            family: $primary-font
+            weight: 300
+            size: 14px
+          color: $post-paragraph
+
+        .comment
+          font:
+            family: $primary-font
+            weight: 300
+            size: 16px
+          color: transparentize($post-title, 0.3)
+          text-align: justify
+          margin-top: 10px
