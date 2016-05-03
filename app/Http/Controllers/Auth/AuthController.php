@@ -67,7 +67,24 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'avatar' => 'img/avatar.png' // temp
+            'avatar' => '/img/avatar.png' // temp
         ]);
     }
+
+
+    //return to previous page on login
+
+    public function showLoginForm()
+    {
+      if(!session()->has('from')){
+        session()->put('from', url()->previous());
+      }
+      return view('auth.login');
+    }
+
+    public function authenticated($request, $user)
+    {
+      return redirect(session()->pull('from', $this->redirectTo));
+    }
+
 }

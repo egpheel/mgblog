@@ -182,7 +182,7 @@ textarea {
       font-size: 12px;
       font-family: "Open Sans", sans-serif; }
     .navbar ul.menu .pointer {
-      padding: 10px 20px;
+      padding: 0;
       margin: 0;
       position: relative; }
 
@@ -193,6 +193,9 @@ textarea {
   .dropdown-menu a:hover {
     color: white !important;
     background: rgba(231, 70, 70, 0.8) !important; }
+
+a.dropdown-toggle {
+  padding: 10px 15px; }
 
 #content .margin-top-20 {
   margin-top: 20px; }
@@ -521,7 +524,6 @@ textarea {
     .comments-wrap .single-comment-wrap .single-comment {
       margin: 5px auto;
       padding: 15px;
-      background: rgba(194, 180, 181, 0.2);
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -550,7 +552,10 @@ textarea {
         .comments-wrap .single-comment-wrap .single-comment .info .name {
           font-family: "Open Sans", sans-serif;
           font-weight: 300;
-          font-size: 18px;
+          font-size: 18px; }
+        .comments-wrap .single-comment-wrap .single-comment .info .admin {
+          color: rgba(231, 70, 70, 0.6); }
+        .comments-wrap .single-comment-wrap .single-comment .info .user {
           color: rgba(51, 51, 51, 0.8); }
         .comments-wrap .single-comment-wrap .single-comment .info .date {
           font-family: "Open Sans", sans-serif;
@@ -564,6 +569,25 @@ textarea {
           color: rgba(51, 51, 51, 0.7);
           text-align: justify;
           margin-top: 10px; }
+      .comments-wrap .single-comment-wrap .single-comment .no-comment {
+        margin: 20px auto;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        color: rgba(51, 51, 51, 0.7);
+        text-align: center; }
+        .comments-wrap .single-comment-wrap .single-comment .no-comment .no-comment-header {
+          font-size: 18px;
+          margin: 5px auto; }
+        .comments-wrap .single-comment-wrap .single-comment .no-comment .no-comment-desc {
+          font-size: 16px;
+          margin: 5px auto; }
+
+.owned {
+  background: rgba(194, 180, 181, 0.3); }
+
+.not-owned {
+  background: rgba(194, 180, 181, 0.2); }
 
 .sidebar {
   padding: 25px;

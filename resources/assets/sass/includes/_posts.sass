@@ -237,7 +237,6 @@
     .single-comment
       margin: 5px auto
       padding: 15px
-      background: $comments
       +display(flex)
       +align-items(center)
 
@@ -259,6 +258,11 @@
             family: $primary-font
             weight: 300
             size: 18px
+
+        .admin
+          color: transparentize($read-more, 0.4)
+
+        .user
           color: transparentize($post-title, 0.2)
 
         .date
@@ -276,3 +280,26 @@
           color: transparentize($post-title, 0.3)
           text-align: justify
           margin-top: 10px
+
+      .no-comment
+        margin: 20px auto
+        font:
+          family: $primary-font
+          weight: 300
+          size: 18px
+        color: transparentize($post-title, 0.3)
+        text-align: center
+
+        .no-comment-header
+          font-size: 18px
+          margin: 5px auto
+
+        .no-comment-desc
+          font-size: 16px
+          margin: 5px auto
+
+.owned
+  background: opacify($comments, 0.1)
+
+.not-owned
+  background: $comments

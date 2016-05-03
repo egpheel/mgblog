@@ -56,6 +56,10 @@
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Esqueceu-se da palavra-passe?</a>
                             </div>
+                            <div class="col-md-12 text-center">
+                              <br />
+                              <p>Ainda não tem conta? <a href="/register">Clique aqui para se registar.</a></p>
+                            </div>
                         </div>
                     </form>
                 </div>
