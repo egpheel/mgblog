@@ -244,12 +244,14 @@
         margin: 0 25px
         border-radius: 50%
         width: 128px
+        min-width: 128px
         height: 128px
         overflow: hidden
 
       .info
         width: 75%
         padding: 20px
+
         .name, .date
           display: inline-block
 
@@ -280,6 +282,47 @@
           color: transparentize($post-title, 0.3)
           text-align: justify
           margin-top: 10px
+
+        textarea.edit-comment
+          font:
+            family: $primary-font
+            weight: 300
+            size: 16px
+          color: transparentize($post-title, 0.2)
+          text-align: justify
+          margin-top: 10px
+          display: none
+
+      .edit-comment-wrap
+        border-left: 1px dashed $vr-color
+        text-align: center
+        padding: 20px 5px 20px 20px
+
+        .edit-btn, .delete-btn
+          display: block
+          padding: 5px
+          +size(30px)
+          border: 1px solid transparentize($post-paragraph, 0.6)
+          color: $post-paragraph
+          background: transparentize($featured-text, 0.6)
+          border-radius: 3px
+          margin-bottom: 10px
+          +transition(0.2s ease-in-out)
+
+        .delete-btn
+          margin-bottom: 0px
+          +transition(0.2s ease-in-out)
+
+          &:hover
+            background: $error
+            color: $featured-text
+            +transition(0.2s ease-in-out)
+
+        .edit-btn
+          &:hover
+            background: $edit
+            color: $featured-text
+            +transition(0.2s ease-in-out)
 
       .no-comment
         margin: 20px auto

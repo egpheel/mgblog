@@ -94,7 +94,14 @@ class CommentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      if ($request->ajax()) {
+        $comment = Comment::find($id);
+
+        $comment->text = $request->formData['text'];
+        $comment->status = '1'; //0 = normal, 1 = edited
+
+        $comment->save();
+      }
     }
 
     /**
@@ -105,6 +112,8 @@ class CommentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $comment = Comment::find($id);
+
+      $comment->delete();
     }
 }

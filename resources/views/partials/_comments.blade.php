@@ -1,6 +1,7 @@
 <div class="comments-wrap">
   <h2>Comentários</h2>
   <div class="single-comment-wrap">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @if ($post->comments->count())
       @foreach ($post->comments as $comment)
         <div class="single-comment {{ Auth::check() ? (Auth::user()->id == $comment->user->id ? 'owned' : 'not-owned') : 'not-owned' }}">
@@ -12,17 +13,24 @@
               {{ $comment->user->name }}
             </div>
             <div class="date">
-              &#8211; <time datetime="{{ $comment->updated_at->toAtomString() }}">{{ $comment->created_at->format('d/m/Y, H:i') }}</time>
+              &#8211; <time datetime="{{ $comment->updated_at->toAtomString() }}">{{ $comment->updated_at->format('d/m/Y, H:i') }}</time>
+              @if ($comment->created_at != $comment->updated_at)
+                <em class="edited">(editado)</em>
+              @endif
             </div>
-            <div class="comment">
-              {{ $comment->text }}
-            </div>
+            <div class="comment">{{ $comment->text }}</div>
+            <textarea class="form-control edit-comment" rows="5" data-id="{{ $comment->id }}"></textarea>
           </div>
           @if (Auth::check())
-            @if(Auth::user()->id == $comment->user->id)
+            @if(Auth::user()->id == $comment->user->id || Auth::user()->hasRole('admin'))
               <div class="edit-comment-wrap">
-                <div class="edit-btns">
-                  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                @if (Auth::user()->id == $comment->user->id)
+                  <div class="btn edit-btn" data-toggle="tooltip" data-placement="top" title="Editar">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                  </div>
+                @endif
+                <div class="btn delete-btn" data-toggle="tooltip" data-placement="top" title="Apagar">
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </div>
               </div>
             @endif

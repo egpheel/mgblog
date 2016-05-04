@@ -2,6 +2,7 @@
 
 @section('stylesheets')
   <link rel="stylesheet" href="/css/parsley.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/2.1.1/sweetalert2.min.css">
 @endsection
 
 @section('scripts')
@@ -9,6 +10,8 @@
   <script src="/js/parsley/pt-pt.js"></script>
   <!--infinitescroll-->
   <script src="/js/infinitescroll/infinitescroll.js"></script>
+  <!--sweet alert-->
+  <script src="https://cdn.jsdelivr.net/sweetalert2/2.1.1/sweetalert2.min.js"></script>
   <!--my js-->
   <script src="/js/functions.js"></script>
 @endsection

@@ -21,7 +21,13 @@ $(document).ready(function() {
       });
   })();
 
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+
   comment();
+  editComment();
+  deleteComment();
 });
 
 function stickySidebar() {
@@ -89,5 +95,125 @@ function comment() {
         btn.attr('disabled', false);
       }, 10000);
     }
+  });
+}
+
+function editComment() {
+  var btn = $('.edit-btn');
+  var editCommentArea = $('.edit-comment');
+  var comment = $('.comment');
+
+  btn.bind('click', function () {
+    var $this = $(this);
+    var comment = $this.parent().parent().find('.comment');
+    editCommentArea = $this.parent().parent().find('.edit-comment');
+    editCommentArea.text(comment.text());
+    comment.hide();
+    editCommentArea.show().focus();
+    $this.attr('disabled', true);
+  });
+
+  editCommentArea.on('blur', function () {
+    var $this = $(this);
+    var dateElem = $this.parent().parent().find('.date');
+    comment = $this.parent().parent().find('.comment');
+    var origComment = comment.html();
+    var d = new Date();
+    var time = (d.getDate()<10 ? '0' : '') + d.getDate() + '/' + (d.getMonth()<10 ? '0' : '') + (d.getMonth() + 1) + '/' + d.getFullYear() + ', ' + (d.getHours()<10 ? '0' : '') + d.getHours() + ':' + (d.getMinutes()<10 ? '0' : '') + d.getMinutes();
+
+    comment.html(editCommentArea.val());
+    comment.show();
+    editCommentArea.hide();
+    if (comment.html() != origComment) {
+      $this.parent().parent().find('.edited').remove();
+      dateElem.find('time').text(time);
+      dateElem.append('<em class="edited">(editado)</em>');
+
+      var commentid = editCommentArea.data('id');
+      var editedcomment = editCommentArea.val();
+
+      var formData = {
+        text: editedcomment,
+      }
+
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+
+      $.ajax({
+        type: 'POST',
+        url: '/comments/' + commentid,
+        data: {
+          formData,
+          _method: 'PATCH',
+        },
+        success: function(data) {
+          //do something eventually
+        },
+        error: function(data) {
+          console.log('Erro: ' + data);
+        }
+      });
+    }
+    btn.attr('disabled', false);
+  });
+}
+
+function deleteComment() {
+  var btn = $('.delete-btn');
+
+  btn.on('click', function () {
+    var $this = $(this);
+    var comment = $this.parent().parent().find('.edit-comment');
+    var commentid = comment.data('id');
+    var commentwrapper = $this.parent().parent();
+
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+
+    swal({
+      title: 'Tem a certeza?',
+      text: 'Se apagar este comentário não poderá recuperá-lo.',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Apagar',
+      confirmButtonColor: '#e74646',
+      cancelButtonText: 'Cancelar',
+      preConfirm: function() {
+        return new Promise(function(resolve) {
+          swal.enableLoading();
+          $.ajax({
+            type: 'POST',
+            url: '/comments/' + commentid,
+            data: {
+              _method: 'DELETE',
+            },
+            success: function(data) {
+              resolve();
+            },
+            error: function(data) {
+              console.log('Erro: ' + data);
+            }
+          });
+
+        });
+      },
+      allowOutsideClick: true
+    }).then(function(isConfirm) {
+      if (isConfirm) {
+        swal({
+          title: 'Comentário apagado com sucesso',
+          confirmButtonText: 'Fechar',
+          confirmButtonColor: '#36b360',
+          type: 'success'
+        });
+        commentwrapper.remove();
+      }
+    });
   });
 }
