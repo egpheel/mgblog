@@ -1,10 +1,10 @@
 @extends('layout')
 
 @section('meta')
-  <meta property="og:title" content="{{ $post->title }}"/>
-  <meta property="og:image" content="{{ url('/') . '/' . $post->photo }}"/>
-  <meta property="og:site_name" content="Marco Gil"/>
-  <meta property="og:description" content="{!! html_entity_decode(substr(nl2br(e($post->body)), 0, 500)) !!}"/>
+  <meta property="og:title" content="{{ $post->title }}">
+  <meta property="og:image" content="{{ url('/') . '/' . $post->photo }}">
+  <meta property="og:site_name" content="Marco Gil">
+  <meta property="og:description" content="{!! strip_tags(substr(nl2br(e($post->body)), 0, 500)) !!}">
 @endsection
 
 @section('stylesheets')
