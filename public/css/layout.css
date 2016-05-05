@@ -421,7 +421,7 @@ a.dropdown-toggle {
       .posts-wrap .posts .post .post-info ul {
         list-style-type: none;
         padding: 0;
-        margin: 25px 0 100px; }
+        margin: 25px 0 75px; }
         .posts-wrap .posts .post .post-info ul a {
           margin: 0 20px 0 0;
           padding: 0; }
@@ -626,6 +626,98 @@ a.dropdown-toggle {
 
 .not-owned {
   background: rgba(194, 180, 181, 0.2); }
+
+.social-btns {
+  margin: 0 auto 100px;
+  height: 150px;
+  width: 350px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  box-orient: vertical;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  border-radius: 5px;
+  background-color: rgba(122, 122, 122, 0.13); }
+
+.share-title {
+  margin: 0 auto 20px;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 300; }
+
+.facebook, .twitter, .googleplus {
+  display: inline-block;
+  margin: 0 10px; }
+  .facebook a, .twitter a, .googleplus a {
+    color: white; }
+
+.socicon-facebook, .socicon-twitter, .socicon-googleplus {
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  box-orient: horizontal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  height: 50px;
+  width: 50px;
+  font-size: 28px;
+  transition: 0.2s ease-in-out; }
+  .socicon-facebook:hover, .socicon-twitter:hover, .socicon-googleplus:hover {
+    opacity: 0.7; }
+
+.socicon-facebook {
+  background: #3e5b98; }
+
+.socicon-twitter {
+  background: #4da7de; }
+
+.socicon-googleplus {
+  background: #dd4b39; }
 
 .sidebar {
   padding: 25px;

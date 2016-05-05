@@ -11,6 +11,7 @@
 @section('stylesheets')
   <link rel="stylesheet" href="/css/parsley.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/2.1.1/sweetalert2.min.css">
+  <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
 @endsection
 
 @section('scripts')

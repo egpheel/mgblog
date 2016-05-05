@@ -123,7 +123,7 @@
         ul
           list-style-type: none
           padding: 0
-          margin: 25px 0 100px
+          margin: 25px 0 75px
 
           a
             margin: 0 20px 0 0
@@ -346,3 +346,50 @@
 
 .not-owned
   background: $comments
+
+.social-btns
+  margin: 0 auto 100px
+  +size(350px 150px)
+  +display(flex)
+  +align-items(center)
+  +justify-content(center)
+  +flex-direction(column)
+  border-radius: 5px
+  background-color: transparentize($post-paragraph, 0.87)
+
+.share-title
+  margin: 0 auto 20px
+  padding: 0
+  font:
+    family: $primary-font
+    size: 26px
+    weight: 300
+
+.facebook, .twitter, .googleplus
+  display: inline-block
+  margin: 0 10px
+
+  a
+    color: white
+
+.socicon-facebook, .socicon-twitter, .socicon-googleplus
+  text-align: center
+  +display(flex)
+  +align-items(center)
+  +justify-content(center)
+  +flex-direction(row)
+  +size(50px)
+  font-size: 28px
+  +transition(0.2s ease-in-out)
+
+  &:hover
+    opacity: 0.7
+
+.socicon-facebook
+  background: #3e5b98
+
+.socicon-twitter
+  background: #4da7de
+
+.socicon-googleplus
+  background: #dd4b39
