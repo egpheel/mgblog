@@ -54,7 +54,7 @@
               @unless ($post->tags->isEmpty())
                 <ul>
                   @foreach ($post->tags as $tag)
-                    <a href="#">
+                    <a href="{{ route('blog.tags', ['tag' => $tag->name]) }}">
                       <li>{{ $tag->name }}</li>
                     </a>
                   @endforeach
