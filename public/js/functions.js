@@ -51,6 +51,8 @@ function comment() {
     var img = $('.user').data('img');
     var userid = $('.user').data('userid');
     var postid = $('.user').data('postid');
+    var isAdmin = $('.user').data('admin');
+
     var comment = $('.new-comment').val();
     var d = new Date();
     var time = (d.getDate()<10 ? '0' : '') + d.getDate() + '/' + (d.getMonth()<10 ? '0' : '') + (d.getMonth() + 1) + '/' + d.getFullYear() + ', ' + (d.getHours()<10 ? '0' : '') + d.getHours() + ':' + (d.getMinutes()<10 ? '0' : '') + d.getMinutes();
@@ -69,7 +71,11 @@ function comment() {
       $('.new-comment').css('background', 'rgba(241, 178, 178, 0.35)')
       $('<p class="req">Este campo é obrigatório:</p>').insertBefore('.new-comment');
     } else {
-      cmntArea.append('<div class="single-comment owned"><div class="img"><img src="'+ img +'"></div><div class="info"><div class="name">'+ user +'&nbsp;</div><div class="date"> &#8211; <time>'+ time +'</time></div><div class="comment">'+ comment +'</div></div></div>');
+      if (isAdmin) {
+        cmntArea.append('<div class="single-comment owned"><div class="img"><img src="'+ img +'"></div><div class="info"><div class="name admin">'+ user +'&nbsp;</div><div class="date"> &#8211; <time>'+ time +'</time></div><div class="comment">'+ comment +'</div></div></div>');
+      } else {
+        cmntArea.append('<div class="single-comment owned"><div class="img"><img src="'+ img +'"></div><div class="info"><div class="name">'+ user +'&nbsp;</div><div class="date"> &#8211; <time>'+ time +'</time></div><div class="comment">'+ comment +'</div></div></div>');
+      }
 
       $.ajax({
         type: type,
