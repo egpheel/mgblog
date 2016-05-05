@@ -6,6 +6,11 @@
 @endsection
 
 @section('scripts')
+  <meta property="og:title" content="{{ $post->title }}"/>
+  <meta property="og:image" content="{{ url('/') . '/' . $post->photo }}"/>
+  <meta property="og:site_name" content="Marco Gil"/>
+  <meta property="og:description" content="{!! html_entity_decode(substr(nl2br(e($post->body)), 0, 500)) !!}"/>
+
   <script src="/js/parsley/parsley.js"></script>
   <script src="/js/parsley/pt-pt.js"></script>
   <!--infinitescroll-->
@@ -52,6 +57,7 @@
                 </ul>
               @endunless
             </div>
+            @include('partials._social', ['url' => request()->fullUrl()])
             <div class="author">
               <div class="author-img">
                 @if ($post->user->avatar_vid != '')
