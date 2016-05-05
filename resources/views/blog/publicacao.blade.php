@@ -60,7 +60,7 @@
                 </ul>
               @endunless
             </div>
-            @include('partials._social', ['url' => request()->fullUrl()])
+            @include('partials._social', ['url' => request()->fullUrl(), 'title' => $post->title, 'tags' => $post->tags])
             <div class="author">
               <div class="author-img">
                 @if ($post->user->avatar_vid != '')
