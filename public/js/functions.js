@@ -51,7 +51,7 @@ function comment() {
     var img = $('.user').data('img');
     var userid = $('.user').data('userid');
     var postid = $('.user').data('postid');
-    var comment = $('textarea').val();
+    var comment = $('.new-comment').val();
     var d = new Date();
     var time = (d.getDate()<10 ? '0' : '') + d.getDate() + '/' + (d.getMonth()<10 ? '0' : '') + (d.getMonth() + 1) + '/' + d.getFullYear() + ', ' + (d.getHours()<10 ? '0' : '') + d.getHours() + ':' + (d.getMinutes()<10 ? '0' : '') + d.getMinutes();
 
@@ -86,8 +86,8 @@ function comment() {
         }
       });
 
-      $('textarea').val('');
-      $('textarea').css('background', '#fff');
+      $('.new-comment').val('');
+      $('.new-comment').css('background', '#fff');
       $('.req').remove();
       $('.no-comment-wrap').remove();
       btn.attr('disabled', true);
