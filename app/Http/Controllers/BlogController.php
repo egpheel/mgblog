@@ -28,7 +28,7 @@ class BlogController extends Controller
 
     public function getArchive($year, $month)
     {
-      $posts = Post::latest('publish_at')->published()->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->paginate(5);
+      $posts = Post::latest('publish_at')->published()->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->get();
 
       foreach ($posts as $post) {
         $date = $post->created_at->day . ' ' . translateMonth($post->created_at->month) . ' ' . $post->created_at->year;
