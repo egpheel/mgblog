@@ -6,11 +6,6 @@
 @endsection
 
 @section('scripts')
-  <meta property="og:title" content="{{ $post->title }}"/>
-  <meta property="og:image" content="{{ url('/') . '/' . $post->photo }}"/>
-  <meta property="og:site_name" content="Marco Gil"/>
-  <meta property="og:description" content="{!! html_entity_decode(substr(nl2br(e($post->body)), 0, 500)) !!}"/>
-
   <script src="/js/parsley/parsley.js"></script>
   <script src="/js/parsley/pt-pt.js"></script>
   <!--infinitescroll-->
@@ -35,6 +30,10 @@
         <div class="posts">
           <div class="post">
             <div class="post-info">
+              <meta property="og:title" content="{{ $post->title }}"/>
+              <meta property="og:image" content="{{ url('/') . '/' . $post->photo }}"/>
+              <meta property="og:site_name" content="Marco Gil"/>
+              <meta property="og:description" content="{!! html_entity_decode(substr(nl2br(e($post->body)), 0, 500)) !!}"/>
               <p class="date">
                 <time datetime="{{ $post->created_at->toAtomString() }}">{{ $post->date }}</time>
               </p>
