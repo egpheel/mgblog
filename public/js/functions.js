@@ -47,11 +47,11 @@ function comment() {
   var cmntArea = $('.single-comment-wrap');
 
   btn.on('click', function(e) {
-    var user = $('.user').data('name');
-    var img = $('.user').data('img');
-    var userid = $('.user').data('userid');
-    var postid = $('.user').data('postid');
-    var isAdmin = $('.user').data('admin');
+    var user = $('.req-details').data('name');
+    var img = $('.req-details').data('img');
+    var userid = $('.req-details').data('userid');
+    var postid = $('.req-details').data('postid');
+    var isAdmin = $('.req-details').data('admin');
 
     var comment = $('.new-comment').val();
     var d = new Date();
@@ -65,10 +65,10 @@ function comment() {
       text: comment,
       post: postid,
     }
-    var type = 'POST';
 
     if (comment == '') {
       $('.new-comment').css('background', 'rgba(241, 178, 178, 0.35)')
+      $('.req').remove();
       $('<p class="req">Este campo é obrigatório:</p>').insertBefore('.new-comment');
     } else {
       if (isAdmin) {
@@ -78,7 +78,7 @@ function comment() {
       }
 
       $.ajax({
-        type: type,
+        type: 'POST',
         url: '/comments',
         data: {
           formData,
