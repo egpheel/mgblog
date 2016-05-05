@@ -1,5 +1,12 @@
 @extends('layout')
 
+@section('meta')
+  <meta property="og:title" content="{{ $post->title }}"/>
+  <meta property="og:image" content="{{ url('/') . '/' . $post->photo }}"/>
+  <meta property="og:site_name" content="Marco Gil"/>
+  <meta property="og:description" content="{!! html_entity_decode(substr(nl2br(e($post->body)), 0, 500)) !!}"/>
+@endsection
+
 @section('stylesheets')
   <link rel="stylesheet" href="/css/parsley.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/2.1.1/sweetalert2.min.css">
@@ -30,10 +37,6 @@
         <div class="posts">
           <div class="post">
             <div class="post-info">
-              <meta property="og:title" content="{{ $post->title }}"/>
-              <meta property="og:image" content="{{ url('/') . '/' . $post->photo }}"/>
-              <meta property="og:site_name" content="Marco Gil"/>
-              <meta property="og:description" content="{!! html_entity_decode(substr(nl2br(e($post->body)), 0, 500)) !!}"/>
               <p class="date">
                 <time datetime="{{ $post->created_at->toAtomString() }}">{{ $post->date }}</time>
               </p>
