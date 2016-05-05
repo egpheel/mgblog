@@ -74,7 +74,7 @@ function comment() {
       if (isAdmin) {
         cmntArea.append('<div class="single-comment owned"><div class="img"><img src="'+ img +'"></div><div class="info"><div class="name admin">'+ user +'&nbsp;</div><div class="date"> &#8211; <time>'+ time +'</time></div><div class="comment">'+ comment +'</div></div></div>');
       } else {
-        cmntArea.append('<div class="single-comment owned"><div class="img"><img src="'+ img +'"></div><div class="info"><div class="name">'+ user +'&nbsp;</div><div class="date"> &#8211; <time>'+ time +'</time></div><div class="comment">'+ comment +'</div></div></div>');
+        cmntArea.append('<div class="single-comment owned"><div class="img"><img src="'+ img +'"></div><div class="info"><div class="name">'+ user +'&nbsp;</div><div class="date"> &#8211; <time>'+ time +' </time></div><div class="comment">'+ comment +'</div></div></div>');
       }
 
       $.ajax({
@@ -84,8 +84,11 @@ function comment() {
           formData,
           '_token': $('input[name=_token]').val()
         },
-        success: function(data) {
-          //do something eventually
+        success: function(response) {
+          $('.single-comment:last-child .info').append('<textarea class="form-control edit-comment" rows="5" data-id="' + response['id'] + '"></textarea>');
+          $('.single-comment:last-child').append('<div class="edit-comment-wrap"><div class="btn edit-btn" data-toggle="tooltip" data-placement="top" title="Editar"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></div><div class="btn delete-btn" data-toggle="tooltip" data-placement="top" title="Apagar"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div></div>').fadeIn('slow');
+          editComment();
+          deleteComment();
         },
         error: function(data) {
           console.log('Erro: ' + data);
@@ -133,7 +136,7 @@ function editComment() {
     if (comment.html() != origComment) {
       $this.parent().parent().find('.edited').remove();
       dateElem.find('time').text(time);
-      dateElem.append('<em class="edited">(editado)</em>');
+      dateElem.append('<em class="edited">&nbsp;(editado)</em>');
 
       var commentid = editCommentArea.data('id');
       var editedcomment = editCommentArea.val();

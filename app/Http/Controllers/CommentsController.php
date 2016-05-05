@@ -55,6 +55,7 @@ class CommentsController extends Controller
 
           $comment->save();
 
+          return response()->json(['id' => $comment->id]);
         } else {
           return 'no ajax :(';
         }
