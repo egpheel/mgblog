@@ -31,7 +31,7 @@
           <div class="post">
             <div class="post-info">
               <meta property="og:title" content="{{ $post->title }}"/>
-              <meta property="og:image" content="{{ url('/') . '/' . $post->photo }}"/>
+              {{--<meta property="og:image" content="{{ url('/') . '/' . $post->photo }}"/>--}}
               <meta property="og:site_name" content="Marco Gil"/>
               <meta property="og:description" content="{!! html_entity_decode(substr(nl2br(e($post->body)), 0, 500)) !!}"/>
               <p class="date">
