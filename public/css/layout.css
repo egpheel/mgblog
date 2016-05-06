@@ -446,7 +446,7 @@ a.dropdown-toggle {
       .posts-wrap .posts .post .post-info ul {
         list-style-type: none;
         padding: 0;
-        margin: 25px 0 75px; }
+        margin: 25px 0 50px; }
         .posts-wrap .posts .post .post-info ul a {
           margin: 0 20px 0 0;
           padding: 0; }
@@ -653,7 +653,7 @@ a.dropdown-toggle {
   background: rgba(194, 180, 181, 0.2); }
 
 .social-btns {
-  margin: 0 auto 100px;
+  margin: 0 auto 50px;
   height: 150px;
   width: 350px;
   display: -webkit-box;
