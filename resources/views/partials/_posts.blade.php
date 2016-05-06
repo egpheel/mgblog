@@ -16,6 +16,9 @@
           <a href="{{ route('blog.publicacao', ['year' => $post->created_at->year, 'month' => $post->created_at->month, 'slug' => $post->slug]) }}" class="read-more btn-block">Ler mais</a>
         </div>
       @endif
+        <div class="comentarios">
+          <a href="{{ route('blog.publicacao', ['year' => $post->created_at->year, 'month' => $post->created_at->month, 'slug' => $post->slug]) }}#comentarios" class="comentar btn-block">{{ $post->comments->count() === 0 ? 'Comentar' : ($post->comments->count() === 1 ? $post->comments->count() . ' comentário' : $post->comments->count() . ' comentários') }}</a>
+        </div>
       @unless ($post->tags->isEmpty())
         <ul>
           @foreach ($post->tags as $tag)

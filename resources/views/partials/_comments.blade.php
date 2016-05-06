@@ -1,4 +1,4 @@
-<div class="comments-wrap">
+<div id="comentarios" class="comments-wrap">
   <h2>Comentários</h2>
   <div class="single-comment-wrap">
     <meta name="csrf-token" content="{{ csrf_token() }}">
