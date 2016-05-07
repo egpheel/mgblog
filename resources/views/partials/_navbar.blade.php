@@ -26,7 +26,7 @@
               <li><a href="/posts">Publicações</a></li>
               <li role="separator" class="divider"></li>
             @endif
-            <li><a href="#">Perfil</a></li>
+            <li><a href="/perfil/{{ Auth::user()->id }}">Perfil</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="/logout">Sair</a></li>
           </ul>
