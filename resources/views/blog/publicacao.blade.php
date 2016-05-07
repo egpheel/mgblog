@@ -78,7 +78,7 @@
                   O meu nome é {{ explode(' ', $post->user->name)[0] }}.
                 </div>
                 <div class="desc">
-                  Um fotógrafo ou contador de histórias, essas histórias que por vezes são estórias, são também vidas com que me cruzo num quotidiano preenchido por gente.
+                  {{ $post->user->about }}
                 </div>
               </div>
             </div>
