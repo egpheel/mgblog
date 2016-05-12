@@ -27,6 +27,7 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/', 'PagesController@getIndex');
   Route::get('/arquivo', 'PagesController@getArchives');
   Route::get('/perfil/{id}', ['as' => 'profile.show', 'uses' => 'ProfileController@showProfile']);
+  Route::match(['put', 'patch'], '/perfil/{id}', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
   Route::get('/pesquisar', 'PagesController@getPesquisar');
   Route::get('{year}/{month}/{slug}', ['as' => 'blog.publicacao', 'uses' => 'BlogController@getPublicacao'])->where('year', '[0-9]+');
   Route::get('arquivo/{year}/{month}', ['as' => 'blog.arquivo', 'uses' => 'BlogController@getArchive']);

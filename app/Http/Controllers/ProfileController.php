@@ -19,4 +19,18 @@ class ProfileController extends Controller
 
     return view('profile.show', compact('user'));
   }
+
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, $id)
+  {
+    $user = User::find($id);
+
+    return $request;
+  }
 }

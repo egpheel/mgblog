@@ -64,14 +64,7 @@
             @include('partials._social', ['url' => request()->fullUrl(), 'title' => $post->title, 'tags' => $post->tags])
             <div class="author">
               <div class="author-img">
-                @if ($post->user->avatar_vid != '')
-                  <video autoplay loop muted>
-                    <source src="/vid/{{ explode(';', $post->user->avatar_vid)[0] }}" type="video/webm">
-                    <source src="/vid/{{ explode(';', $post->user->avatar_vid)[1] }}" type="video/mp4">
-                  </video>
-                @else
-                  <img src="{{ $post->user->avatar }}">
-                @endif
+                <img src="{{ $post->user->avatar }}">
               </div>
               <div class="author-desc">
                 <div class="name">

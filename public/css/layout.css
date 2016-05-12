@@ -300,6 +300,11 @@ a.dropdown-toggle {
   .results h1 strong {
     color: rgba(51, 51, 51, 0.95); }
 
+.modal-header h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 26px; }
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
