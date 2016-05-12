@@ -33,15 +33,31 @@
           <div class="modal-body">
             {!! Form::model($user, array('route' => ['profile.update', $user->id], 'method' => 'PUT', 'files' => true)) !!}
             <div class="form-group">
+              {!! Form::label('avatar', 'Imagem:') !!}
+              <div class="profile-img">
+                <img src="/{{ $user->avatar }}">
+              </div>
+              <em>Alterar imagem (128x128 px):</em>
+              {!! Form::file('avatar', ['class' => 'form-control'])  !!}
+            </div>
+            <div class="form-group">
               {!! Form::label('name', 'Nome:') !!}
               {!! Form::text('name', null, array('class' => 'form-control', 'placeholder' => 'Nome', 'required' => '', 'maxlength' => '255')) !!}
             </div>
-            {!! Form::close() !!}
+            <div class="form-group">
+              {!! Form::label('email', 'E-mail:') !!}
+              {!! Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'E-mail', 'required' => '')) !!}
+            </div>
+            <div class="form-group">
+              {!! Form::label('about', 'Sobre:') !!}
+              {!! Form::textarea('about', null, array('class' => 'form-control', 'placeholder' => 'Sobre')) !!}
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-success">Guardar</button>
+            {{ Form::submit('Guardar', array('class' => 'btn btn-success')) }}
           </div>
+          {!! Form::close() !!}
         </div>
       </div>
     </div>

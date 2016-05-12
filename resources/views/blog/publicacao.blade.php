@@ -64,7 +64,7 @@
             @include('partials._social', ['url' => request()->fullUrl(), 'title' => $post->title, 'tags' => $post->tags])
             <div class="author">
               <div class="author-img">
-                <img src="{{ $post->user->avatar }}">
+                <img src="/{{ $post->user->avatar }}">
               </div>
               <div class="author-desc">
                 <div class="name">

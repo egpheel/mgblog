@@ -5,4 +5,5 @@ Homestead.yaml
 Homestead.json
 .env
 /public/photos
+/public/img/profile_pics
 composer.lock

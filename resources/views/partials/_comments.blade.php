@@ -6,7 +6,7 @@
       @foreach ($post->comments as $comment)
         <div class="single-comment {{ Auth::check() ? (Auth::user()->id == $comment->user->id ? 'owned' : 'not-owned') : 'not-owned' }}">
           <div class="img">
-            <img src="{{ $comment->user->avatar }}">
+            <img src="/{{ $comment->user->avatar }}">
           </div>
           <div class="info">
             <div class="name {{ $comment->user->hasRole('admin') ? 'admin' : 'user' }}">
