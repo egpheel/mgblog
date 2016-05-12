@@ -36,7 +36,7 @@ class ProfileController extends Controller
     if ($request->hasFile('avatar')) {
       $this->validate($request, array('avatar' => 'required|image'));
 
-      if ($user->avatar != 'img/avatar.jpg') {
+      if ($user->avatar != 'img/avatar.png') {
         File::delete($user->avatar);
       }
 
