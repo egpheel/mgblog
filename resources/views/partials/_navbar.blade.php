@@ -2,7 +2,7 @@
   <hr>
   <ul class="menu">
     <a href="/">
-      <li class="menu-btn">Blog</li>
+      <li class="menu-btn">Início</li>
     </a>
     <a href="/arquivo">
       <li class="menu-btn">Arquivo</li>
