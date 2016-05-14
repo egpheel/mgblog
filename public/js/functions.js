@@ -72,9 +72,9 @@ function comment() {
       $('<p class="req">Este campo é obrigatório:</p>').insertBefore('.new-comment');
     } else {
       if (isAdmin) {
-        cmntArea.append('<div class="single-comment owned"><div class="img"><img src="/'+ img +'"></div><div class="info"><div class="name admin">'+ user +'&nbsp;</div><div class="date"> &#8211; <time>'+ time +'</time></div><div class="comment">'+ comment +'</div></div></div>');
+        cmntArea.append('<div class="single-comment owned"><a href="/perfil/'+ userid +'"><div class="img"><img src="/'+ img +'"></div></a><div class="info"><a href="/perfil/'+ userid +'"><div class="name admin">'+ user +'&nbsp;</div></a><div class="date"> &#8211; <time>'+ time +'</time></div><div class="comment">'+ comment +'</div></div></div>');
       } else {
-        cmntArea.append('<div class="single-comment owned"><div class="img"><img src="/'+ img +'"></div><div class="info"><div class="name">'+ user +'&nbsp;</div><div class="date"> &#8211; <time>'+ time +' </time></div><div class="comment">'+ comment +'</div></div></div>');
+        cmntArea.append('<div class="single-comment owned"><a href="/perfil/'+ userid +'"><div class="img"><img src="/'+ img +'"></div></a><div class="info"><a href="/perfil/'+ userid +'"><div class="name">'+ user +'&nbsp;</div></a><div class="date"> &#8211; <time>'+ time +' </time></div><div class="comment">'+ comment +'</div></div></div>');
       }
 
       $.ajax({

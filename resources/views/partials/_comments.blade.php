@@ -5,13 +5,17 @@
     @if ($post->comments->count())
       @foreach ($post->comments as $comment)
         <div class="single-comment {{ Auth::check() ? (Auth::user()->id == $comment->user->id ? 'owned' : 'not-owned') : 'not-owned' }}">
-          <div class="img">
-            <img src="/{{ $comment->user->avatar }}">
-          </div>
-          <div class="info">
-            <div class="name {{ $comment->user->hasRole('admin') ? 'admin' : 'user' }}">
-              {{ $comment->user->name }}
+          <a href="{{ route('profile.show', ['id' => $comment->user->id])}}">
+            <div class="img">
+              <img src="/{{ $comment->user->avatar }}">
             </div>
+          </a>
+          <div class="info">
+            <a href="{{ route('profile.show', ['id' => $comment->user->id])}}">
+              <div class="name {{ $comment->user->hasRole('admin') ? 'admin' : 'user' }}">
+                {{ $comment->user->name }}
+              </div>
+            </a>
             <div class="date">
               &#8211; <time datetime="{{ $comment->updated_at->toAtomString() }}">{{ $comment->updated_at->format('d/m/Y, H:i') }}</time>
               @if ($comment->created_at != $comment->updated_at)
