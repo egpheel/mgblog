@@ -7,21 +7,32 @@
 @section('content')
   <section class="profile">
     <div class="profile-wrap">
-      Nome: {{ $user->name }}<br />
-      Email: {{$user->email }}<br />
-      Avatar: {{ $user->avatar }}<br />
-      Sobre: {{ $user->about }}<br />
-      Membro desde: {{ $user->date }}<br />
-      Role:
-      @foreach ($user->roles as $role)
-        {{ $role->name }}{{ $role != $user->roles->last() ? ',' : '' }}
-      @endforeach
-      <br />
-      Número de publicações: {{ $user->posts->count() }}<br />
-      Número de comentários: {{ $user->comments->count() }}
+      <div class="profile-img">
+        <img src="/{{ $user->avatar }}">
+      </div>
+      <div class="profile-person">
+        <p class="name">{{ $user->name }}</p>
+        @if(Auth::check() && Auth::user()->id == $user->id)
+          <p class="email">{{ $user->email }}</p>
+          <span>(o seu email é apenas visível por si)</span>
+        @endif
+      </div>
+      <div class="profile-desc">
+        {{ Carbon\Carbon::setLocale('pt') }}
+        <p class="since">Membro há {{ $user->created_at->diffForHumans(Carbon\Carbon::now(), true) }}.</p>
+        <span>(desde {{ $user->date }})</span>
+        @if ($user->hasRole('admin'))
+          <p class="counters">{{ $user->posts->count() }} publicações,&nbsp;
+        @endif
+        {{ $user->comments->count() }} comentários.</p>
+        @if ($user->about != '')
+          <p class="about-title">Sobre</p>
+          <p class="about">{{ $user->about }}</p>
+        @endif
+      </div>
       @if (Auth::check())
         @if(Auth::user()->id == $user->id)
-          <a href="#" data-toggle="modal" data-target="#editProfileModal">Editar</a>
+          <button class="btn btn-block read-more" data-toggle="modal" data-target="#editProfileModal">Editar</button>
           <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
