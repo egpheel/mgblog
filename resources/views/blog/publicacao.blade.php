@@ -63,13 +63,17 @@
             </div>
             @include('partials._social', ['url' => request()->fullUrl(), 'title' => $post->title, 'tags' => $post->tags])
             <div class="author">
-              <div class="author-img">
-                <img src="/{{ $post->user->avatar }}">
-              </div>
-              <div class="author-desc">
-                <div class="name">
-                  O meu nome é {{ explode(' ', $post->user->name)[0] }}.
+              <a href="{{ route('profile.show', ['id' => $post->user->id])}}">
+                <div class="author-img">
+                  <img src="/{{ $post->user->avatar }}">
                 </div>
+              </a>
+              <div class="author-desc">
+                <a href="{{ route('profile.show', ['id' => $post->user->id])}}">
+                  <div class="name">
+                    O meu nome é {{ explode(' ', $post->user->name)[0] }}.
+                  </div>
+                </a>
                 <div class="desc">
                   {{ $post->user->about }}
                 </div>
