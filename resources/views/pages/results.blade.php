@@ -40,10 +40,13 @@
       <div class="posts-wrap row">
           <div class="col-md-9">
             <div class="posts">
+              @if(!$posts->isEmpty())
+                <h1>Resultados da pesquisa por <strong>{{ $query }}</strong>:</h1>
 
-              <h1>Resultados da pesquisa por <strong>{{ $query }}</strong>:</h1>
-
-              @include('partials._posts')
+                @include('partials._posts')
+              @else
+                <h1>Não existem resultados para a sua pesquisa.</h1>
+              @endif
 
             </div>
           </div>
