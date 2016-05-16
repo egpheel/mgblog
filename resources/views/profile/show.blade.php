@@ -43,12 +43,11 @@
                 <div class="modal-body">
                   {!! Form::model($user, array('route' => ['profile.update', $user->id], 'method' => 'PUT', 'files' => true)) !!}
                   <div class="form-group">
-                    {!! Form::label('avatar', 'Imagem:') !!}
                     <div class="profile-img">
                       <img src="/{{ $user->avatar }}">
                     </div>
                     <em>Alterar imagem (150px x 150px):</em>
-                    {!! Form::file('avatar', ['class' => 'form-control'])  !!}
+                    {!! Form::file('avatar', ['class' => 'form-control file-input'])  !!}
                   </div>
                   <div class="form-group">
                     {!! Form::label('name', 'Nome:') !!}

@@ -364,19 +364,30 @@ a.dropdown-toggle {
     margin-bottom: 10px;
     color: rgba(51, 51, 51, 0.7); }
 
-.modal-header h4 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300;
-  font-size: 26px; }
+.modal {
+  text-align: left; }
+
+.modal-header {
+  text-align: center; }
+  .modal-header h4 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 26px; }
 
 .modal-body {
   font-family: "Open Sans", sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+  padding-top: 25px; }
   .modal-body label {
     font-weight: 500; }
   .modal-body input, .modal-body textarea {
     font-size: 18px; }
     .modal-body input:focus, .modal-body textarea:focus {
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 8px #d78383;
+      border-color: #d78383; }
+  .modal-body .file-input {
+    font-size: 14px; }
+    .modal-body .file-input:focus {
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 8px #d78383;
       border-color: #d78383; }
   .modal-body #avatar {
@@ -833,6 +844,53 @@ a.dropdown-toggle {
 
 .socicon-googleplus {
   background: #dd4b39; }
+
+.login-register {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300; }
+  .login-register label {
+    font-weight: 500; }
+  .login-register input {
+    font-size: 18px; }
+    .login-register input:focus {
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 8px #d78383;
+      border-color: #d78383; }
+
+.login-register-wrap {
+  padding: 50px;
+  margin: 50px auto;
+  width: 600px;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2); }
+
+.login-register-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 35px; }
+
+.checkbox {
+  text-align: center; }
+  .checkbox label {
+    font-weight: 300; }
+  .checkbox input {
+    height: 15px;
+    width: 15px; }
+
+.login-register-btn {
+  text-align: center;
+  margin: 25px auto 15px; }
+  .login-register-btn .read-more {
+    text-transform: none;
+    font-size: 20px; }
+
+.forgot-pass-no-account {
+  text-align: center;
+  font-size: 16px; }
+  .forgot-pass-no-account a {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300; }
+  .forgot-pass-no-account p {
+    margin-top: 35px; }
 
 .sidebar {
   padding: 25px;
