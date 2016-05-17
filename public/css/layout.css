@@ -979,7 +979,13 @@ a.dropdown-toggle {
 
 @media (max-width: 457px) {
   .featured-home .featured-post-wrap {
-    top: 70px; } }
+    top: 70px; }
+  .posts-wrap .posts {
+    padding-left: 5px;
+    padding-right: 5px; }
+    .posts-wrap .posts .post .post-img {
+      margin-left: -20px;
+      margin-right: -20px; } }
 
 @media (max-width: 417px) {
   .featured-home .featured-post-wrap {
