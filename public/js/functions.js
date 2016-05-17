@@ -1,3 +1,5 @@
+var mobileNav = false;
+
 $(document).ready(function() {
 
   $(window).scroll(function() {
@@ -28,6 +30,8 @@ $(document).ready(function() {
   comment();
   editComment();
   deleteComment();
+
+  mobileNavToggle();
 });
 
 function stickySidebar() {
@@ -224,5 +228,27 @@ function deleteComment() {
         commentwrapper.remove();
       }
     });
+  });
+}
+
+function mobileNavToggle() {
+  var btn = $('.mobile-menu-wrap');
+  var menu = $('.navbar-mobile > ul.menu');
+  var header = $('.header');
+
+  btn.on('click', function () {
+    if (mobileNav) {
+      menu.fadeOut('fast');
+      mobileNav = false;
+      header.animate({
+        marginTop: "75px"
+      });
+    } else {
+      menu.fadeIn();
+      mobileNav = true;
+      header.animate({
+        marginTop: "285px"
+      });
+    }
   });
 }

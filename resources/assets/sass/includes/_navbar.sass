@@ -39,3 +39,49 @@
 a.dropdown-toggle
   padding: 10px 15px 10px 0px
   margin-left: 15px
+
+.navbar-mobile
+  display: none
+
+  .mobile-menu-wrap
+    +position(absolute, 15px 15px null null)
+    cursor: pointer
+    padding-bottom: 8px
+
+  .box-shadow-menu
+    position: relative
+    padding-left: 45px
+
+  .box-shadow-menu:before
+    content: ""
+    position: absolute
+    left: 0
+    top: 5px
+    width: 45px
+    height: 2px
+    background: $post-paragraph
+    box-shadow: 0 8px 0 0 $post-paragraph, 0 16px 0 0 $post-paragraph
+
+  ul.menu
+    display: none
+    +position(absolute, 40px 0 null 0)
+    list-style-type: none
+    margin: 0
+    padding: 0
+    background: pink
+
+    .menu-btn
+      text-align: center
+      display: block
+      margin: 0
+      text-transform: uppercase
+      padding: 10px 0
+      font:
+        size: 12px
+        family: $primary-font
+      background: white
+      border-bottom: 1px solid transparentize($hr-color, 0.5)
+
+      .dropdown-toggle
+        margin: 0
+        padding: 10px 50px
