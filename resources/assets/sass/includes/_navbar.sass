@@ -68,7 +68,6 @@ a.dropdown-toggle
     list-style-type: none
     margin: 0
     padding: 0
-    background: pink
 
     .menu-btn
       text-align: center
@@ -85,3 +84,20 @@ a.dropdown-toggle
       .dropdown-toggle
         margin: 0
         padding: 10px 50px
+
+  .dropdown-menu
+    left: 100px
+    right: 100px
+    margin-left: -50px
+    margin-right: -50px
+    text-align: center
+    border-radius: 0
+    a
+      text-transform: none
+      font:
+        family: $primary-font !important
+        weight: 300 !important
+
+      &:hover
+        color: $featured-text !important
+        background: transparentize($read-more, 0.2) !important

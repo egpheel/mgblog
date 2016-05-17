@@ -32,6 +32,8 @@ $(document).ready(function() {
   deleteComment();
 
   mobileNavToggle();
+
+  $(window).resize(checkSize);
 });
 
 function stickySidebar() {
@@ -251,4 +253,17 @@ function mobileNavToggle() {
       });
     }
   });
+}
+
+function checkSize() {
+  var check = $('.navbar-mobile');
+  var header = $('.header');
+
+  if(check.css('display') != 'block') {
+    header.css('margin-top', '75px');
+  } else {
+    if (mobileNav) {
+      header.css('margin-top', '285px');
+    }
+  }
 }
