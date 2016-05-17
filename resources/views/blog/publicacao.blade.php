@@ -83,7 +83,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 sidebar-show">
         @include('partials._sidebar')
       </div>
     </div>

@@ -15,14 +15,14 @@
   <section class="content">
     <div class="row">
       @if (!is_null($featured))
-        <div class="featured">
+        <div class="featured featured-home">
           <hr>
           <div class="img-wrap">
             <img src="/{{ $featured->photo }}" alt="Publicação em destaque">
           </div>
           <hr>
           <div class="featured-post-wrap">
-            <div class="searchBox-flex">
+            <div class="searchBox-flex home-search">
               <div class="searchBox">
                 {!! Form::open(['route' => 'search.results', 'method' => 'GET', 'class' => 'searchForm form-inline']) !!}
                 <div class="input-group">
@@ -50,7 +50,7 @@
 
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 sidebar-show">
           @include('partials._sidebar')
         </div>
       </div>
