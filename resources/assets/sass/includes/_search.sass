@@ -1,8 +1,8 @@
 .searchBox-flex
   height: 170px
-  display: flex
-  align-items: center
-  justify-content: center
+  +display(flex)
+  +align-items(center)
+  +justify-content(center)
 
   .searchBox
     background-color: rgba(0,0,0, 0.1)
@@ -16,7 +16,8 @@
         family: $primary-font
         size: 24px
         weight: 300
-      padding: 25px
+      padding: 0 25px
+      height: 52px
       border-color: rgba(0,0,0,0)
 
       &:focus

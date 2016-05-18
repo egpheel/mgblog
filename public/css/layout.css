@@ -190,7 +190,8 @@ textarea {
       position: relative; }
 
 .dropdown-menu {
-  margin-left: 15px; }
+  margin-left: 15px;
+  border-radius: 0; }
   .dropdown-menu a {
     text-transform: none;
     font-family: "Open Sans", sans-serif !important;
@@ -309,15 +310,27 @@ a.dropdown-toggle {
 
 .searchBox-flex {
   height: 170px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
   display: -webkit-flex;
+  display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
   align-items: center;
+  -ms-flex-align: center;
+  box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
   .searchBox-flex .searchBox {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 3px;
@@ -328,7 +341,8 @@ a.dropdown-toggle {
       font-family: "Open Sans", sans-serif;
       font-size: 24px;
       font-weight: 300;
-      padding: 25px;
+      padding: 0 25px;
+      height: 52px;
       border-color: transparent; }
       .searchBox-flex .searchBox .searchBox-input:focus {
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 0 8px #d78383;
