@@ -6,9 +6,11 @@
       </p>
       <h2><a class='title' href="{{ route('blog.publicacao', ['year' => $post->created_at->year, 'month' => $post->created_at->month, 'slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
     </div>
-    <div class="post-img">
-      <img src="/{{ $post->photo }}" alt="Publicação">
-    </div>
+    <a href="{{ route('blog.publicacao', ['year' => $post->created_at->year, 'month' => $post->created_at->month, 'slug' => $post->slug]) }}">
+      <div class="post-img">
+        <img src="/{{ $post->photo }}" alt="Publicação">
+      </div>
+    </a>
     <div class="post-info">
       <div class="post-paragraph">{!! html_entity_decode(substr(nl2br(e($post->body)), 0, 500)) !!}{!! html_entity_decode(strlen(nl2br(e($post->body))))>500 ? '...' : '' !!}</div>
       @if (strlen(nl2br(e($post->body)))>500)

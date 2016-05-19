@@ -51,6 +51,12 @@ class BlogController extends Controller
 
       $posts = $tags->posts_paginated;
 
+      foreach ($posts as $post) {
+        $date = $post->created_at->day . ' ' . translateMonth($post->created_at->month) . ' ' . $post->created_at->year;
+
+        $post->date = $date;
+      }
+      
       if ($posts->isEmpty()) {
         abort(404);
       } else {

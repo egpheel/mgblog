@@ -17,7 +17,7 @@
               </div>
             </a>
             <div class="date">
-              &#8211; <time datetime="{{ $comment->updated_at->toAtomString() }}">{{ $comment->updated_at->format('d/m/Y, H:i') }}</time>
+              <span>&#8211; </span><time datetime="{{ $comment->updated_at->toAtomString() }}">{{ $comment->updated_at->format('d/m/Y, H:i') }}</time>
               @if ($comment->created_at != $comment->updated_at)
                 <em class="edited">(editado)</em>
               @endif

@@ -14,13 +14,13 @@ function mobileNavToggle() {
 
   btn.on('click', function () {
     if (mobileNav) {
-      menu.fadeOut('fast');
+      menu.slideUp();
       mobileNav = false;
       header.animate({
         marginTop: "75px"
       });
     } else {
-      menu.fadeIn();
+      menu.slideDown();
       mobileNav = true;
       header.animate({
         marginTop: "285px"

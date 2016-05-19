@@ -8,16 +8,17 @@
         .post-img
           height: 350px
 
-@media (max-width: 903px)
-  .searchBox-flex
-    height: 130px
-
+@media (max-width: 1000px)
   .sidebar-show
     display: none
 
   .posts-wrap
     .col-md-9
       width: 100%
+
+@media (max-width: 903px)
+  .searchBox-flex
+    height: 130px
 
   .navbar
     hr
@@ -36,12 +37,15 @@
       .featured-body
         font-size: 22px
 
+  .social-btns
+    width: 60%
 @media (max-width: 690px)
   .posts-wrap
     .posts
       .post
         .post-img
           height: 350px
+        .post-img, .post-img-full
           margin-left: -40px
           margin-right: -40px
 
@@ -55,6 +59,25 @@
   .featured-home
     .featured-post-wrap
       top: 100px
+
+  .author
+    .author-img
+      +size(100px)
+
+  .comments-wrap
+    .single-comment-wrap
+      .single-comment
+        .img
+          width: 95px
+          min-width: 95px
+          height: 95px
+          margin: 0 15px
+
+        .info
+          padding: 10px
+
+  .social-btns
+    width: 65%
 
 @media (max-width: 550px)
   .featured-home
@@ -76,6 +99,43 @@
           p.date
             font-size: 10px
 
+  .social-btns
+    width: 75%
+
+  .share-title
+    font-size: 22px
+
+  .socicon-twitter, .socicon-facebook, .socicon-googleplus
+    +size(40px)
+    font-size: 24px
+
+  .author
+    +flex-direction(column)
+    padding-left: 5px
+    padding-right: 5px
+
+    .author-desc
+      width: 100%
+      text-align: center
+      margin: 10px auto
+      padding: 0
+
+      .name
+        font-size: 20px
+
+      .desc
+        font-size: 18px
+
+  .comments-wrap
+    .single-comment-wrap
+      .single-comment
+        .date
+          display: block
+          width: 100%
+
+          span
+            display: none
+
   .navbar
     display: none
 
@@ -89,24 +149,47 @@
         .post-img
           height: 250px
 
+  .social-btns
+    width: 85%
+
 @media (max-width: 457px)
   .featured-home
     .featured-post-wrap
-      top: 70px
+      top: 65px
 
   .posts-wrap
     .posts
       padding-left: 5px
       padding-right: 5px
       .post
-        .post-img
+        .post-img, .post-img-full
           margin-left: -20px
           margin-right: -20px
+
+  .comments-wrap
+    .single-comment-wrap
+      .single-comment
+        .img
+          width: 70px
+          min-width: 70px
+          height: 70px
+          margin: 0 5px
+
+        .info
+          .name
+            font-size: 16px
+
+          .date
+            font-size: 12px
+
+          .comment
+            font-size: 14px
+
 
 @media (max-width: 417px)
   .featured-home
     .featured-post-wrap
-      top: 55px
+      top: 50px
 
   .header
     h1
@@ -117,13 +200,29 @@
   .posts-wrap
     .posts
       .post
+        .post-info
+          h2
+            font-size: 36px
+
         .post-img
           height: 200px
+
+  .author
+    .author-img
+      +size(75px)
 
 @media (max-width: 360px)
   .featured-home
     .featured-post-wrap
       top: 35px
+
+  .comments-wrap
+    .single-comment-wrap
+      .single-comment
+        +flex-direction(column)
+        .info
+          width: 100%
+          text-align: center
 
 @media (max-width: 320px)
   .featured-home
@@ -131,6 +230,9 @@
       top: 50px
       .featured-body
         font-size: 20px
+
+  .social-btns
+    width: 97%
 
   .header
     h1

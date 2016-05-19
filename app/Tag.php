@@ -26,6 +26,14 @@ class Tag extends Model
    */
   public function getPostsPaginatedAttribute()
   {
-    return $this->posts()->published()->paginate(5);
+    return $this->posts()->latest()->published()->paginate(5);
+  }
+
+  /**
+   * Get random tags.
+   * Usage: e.g. $tag->random()
+   */
+  public function scopeRandom($query) {
+    return $query->orderByRaw('RAND()');
   }
 }
