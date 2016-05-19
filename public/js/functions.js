@@ -72,9 +72,9 @@ function comment() {
       $('<p class="req">Este campo é obrigatório:</p>').insertBefore('.new-comment');
     } else {
       if (isAdmin) {
-        cmntArea.append('<div class="single-comment owned"><a href="/perfil/'+ userid +'"><div class="img"><img src="/'+ img +'"></div></a><div class="info"><a href="/perfil/'+ userid +'"><div class="name admin">'+ user +'&nbsp;</div></a><div class="date"> &#8211; <time>'+ time +'</time></div><div class="comment">'+ comment +'</div></div></div>');
+        cmntArea.append('<div class="single-comment owned"><a href="/perfil/'+ userid +'"><div class="img"><img src="/'+ img +'"></div></a><div class="info"><a href="/perfil/'+ userid +'"><div class="name admin">'+ user +'&nbsp;</div></a><div class="date"><span> &#8211; </span><time>'+ time +'</time></div><div class="comment">'+ comment +'</div></div></div>');
       } else {
-        cmntArea.append('<div class="single-comment owned"><a href="/perfil/'+ userid +'"><div class="img"><img src="/'+ img +'"></div></a><div class="info"><a href="/perfil/'+ userid +'"><div class="name">'+ user +'&nbsp;</div></a><div class="date"> &#8211; <time>'+ time +' </time></div><div class="comment">'+ comment +'</div></div></div>');
+        cmntArea.append('<div class="single-comment owned"><a href="/perfil/'+ userid +'"><div class="img"><img src="/'+ img +'"></div></a><div class="info"><a href="/perfil/'+ userid +'"><div class="name">'+ user +'&nbsp;</div></a><div class="date"><span> &#8211; </span><time>'+ time +' </time></div><div class="comment">'+ comment +'</div></div></div>');
       }
 
       $.ajax({
@@ -86,7 +86,7 @@ function comment() {
         },
         success: function(response) {
           $('.single-comment:last-child .info').append('<textarea class="form-control edit-comment" rows="5" data-id="' + response['id'] + '"></textarea>');
-          $('.single-comment:last-child').append('<div class="edit-comment-wrap"><div class="btn edit-btn" data-toggle="tooltip" data-placement="top" title="Editar"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></div><div class="btn delete-btn" data-toggle="tooltip" data-placement="top" title="Apagar"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div></div>').fadeIn('slow');
+          $('.single-comment:last-child').append('<div class="edit-comment-wrap"><div class="btn edit-btn" data-toggle="tooltip" data-placement="top" title="Editar" style="margin-right: 4px"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></div><div class="btn delete-btn" data-toggle="tooltip" data-placement="top" title="Apagar"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div></div>').fadeIn('slow');
           editComment();
           deleteComment();
         },

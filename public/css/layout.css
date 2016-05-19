@@ -1041,13 +1041,29 @@ a.dropdown-toggle {
   .author .author-img {
     height: 100px;
     width: 100px; }
-  .comments-wrap .single-comment-wrap .single-comment .img {
-    width: 95px;
-    min-width: 95px;
-    height: 95px;
-    margin: 0 15px; }
-  .comments-wrap .single-comment-wrap .single-comment .info {
-    padding: 10px; }
+  .comments-wrap .single-comment-wrap .single-comment {
+    position: relative; }
+    .comments-wrap .single-comment-wrap .single-comment .date {
+      display: block;
+      width: 100%; }
+      .comments-wrap .single-comment-wrap .single-comment .date span {
+        display: none; }
+    .comments-wrap .single-comment-wrap .single-comment .img {
+      width: 95px;
+      min-width: 95px;
+      height: 95px;
+      margin: 0 15px; }
+    .comments-wrap .single-comment-wrap .single-comment .info {
+      padding: 10px; }
+    .comments-wrap .single-comment-wrap .single-comment .edit-comment-wrap {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      border: 0;
+      padding: 0; }
+      .comments-wrap .single-comment-wrap .single-comment .edit-comment-wrap .edit-btn, .comments-wrap .single-comment-wrap .single-comment .edit-comment-wrap .delete-btn {
+        display: inline-block;
+        margin: 0; }
   .social-btns {
     width: 65%; } }
 
@@ -1089,11 +1105,6 @@ a.dropdown-toggle {
         font-size: 20px; }
       .author .author-desc .desc {
         font-size: 18px; }
-  .comments-wrap .single-comment-wrap .single-comment .date {
-    display: block;
-    width: 100%; }
-    .comments-wrap .single-comment-wrap .single-comment .date span {
-      display: none; }
   .navbar {
     display: none; }
   .navbar-mobile {
@@ -1124,7 +1135,12 @@ a.dropdown-toggle {
   .comments-wrap .single-comment-wrap .single-comment .info .date {
     font-size: 12px; }
   .comments-wrap .single-comment-wrap .single-comment .info .comment {
-    font-size: 14px; } }
+    font-size: 14px; }
+  .comments-wrap .single-comment-wrap .single-comment .no-comment .no-comment-header {
+    font-size: 16px; }
+  .comments-wrap .single-comment-wrap .single-comment .no-comment .no-comment-desc {
+    font-size: 14px;
+    margin-top: 15px; } }
 
 @media (max-width: 417px) {
   .featured-home .featured-post-wrap {
@@ -1150,7 +1166,8 @@ a.dropdown-toggle {
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     flex-direction: column;
-    -ms-flex-direction: column; }
+    -ms-flex-direction: column;
+    position: relative; }
     .comments-wrap .single-comment-wrap .single-comment .info {
       width: 100%;
       text-align: center; } }

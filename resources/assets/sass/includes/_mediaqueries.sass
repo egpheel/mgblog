@@ -67,6 +67,15 @@
   .comments-wrap
     .single-comment-wrap
       .single-comment
+        position: relative
+
+        .date
+          display: block
+          width: 100%
+
+          span
+            display: none
+
         .img
           width: 95px
           min-width: 95px
@@ -75,6 +84,15 @@
 
         .info
           padding: 10px
+
+        .edit-comment-wrap
+          +position(absolute, 5px 5px null null)
+          border: 0
+          padding: 0
+
+          .edit-btn, .delete-btn
+            display: inline-block
+            margin: 0
 
   .social-btns
     width: 65%
@@ -126,16 +144,6 @@
       .desc
         font-size: 18px
 
-  .comments-wrap
-    .single-comment-wrap
-      .single-comment
-        .date
-          display: block
-          width: 100%
-
-          span
-            display: none
-
   .navbar
     display: none
 
@@ -185,6 +193,13 @@
           .comment
             font-size: 14px
 
+        .no-comment
+          .no-comment-header
+            font-size: 16px
+
+          .no-comment-desc
+            font-size: 14px
+            margin-top: 15px
 
 @media (max-width: 417px)
   .featured-home
@@ -220,6 +235,8 @@
     .single-comment-wrap
       .single-comment
         +flex-direction(column)
+        position: relative
+
         .info
           width: 100%
           text-align: center
