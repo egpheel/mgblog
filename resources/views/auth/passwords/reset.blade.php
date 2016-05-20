@@ -36,7 +36,7 @@
         <div class="form-group">
           <div class="login-register-btn">
             <button type="submit" class="btn read-more">
-              Redefinir palavra-passe
+              Redefinir
             </button>
           </div>
         </div>
