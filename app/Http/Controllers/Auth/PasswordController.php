@@ -20,6 +20,8 @@ class PasswordController extends Controller
 
     use ResetsPasswords;
 
+    protected $subject = "O seu link de redifinição de palavra-passe";
+
     protected $redirectTo = '/';
 
     /**
