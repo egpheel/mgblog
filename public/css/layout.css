@@ -932,7 +932,7 @@ a.dropdown-toggle {
 .login-register-wrap {
   padding: 50px;
   margin: 50px auto;
-  width: 600px;
+  width: 60%;
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2); }
 
 .login-register-title {
@@ -1067,6 +1067,10 @@ a.dropdown-toggle {
   .social-btns {
     width: 65%; } }
 
+@media (max-width: 600px) {
+  .login-register-wrap {
+    width: 80%; } }
+
 @media (max-width: 550px) {
   .featured-home .featured-post-wrap {
     top: 80px; }
@@ -1143,6 +1147,10 @@ a.dropdown-toggle {
     margin-top: 15px; } }
 
 @media (max-width: 417px) {
+  .login-register-wrap {
+    width: 95%;
+    padding-left: 25px;
+    padding-right: 25px; }
   .featured-home .featured-post-wrap {
     top: 50px; }
   .header h1 {
