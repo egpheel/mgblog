@@ -16,6 +16,10 @@
   <script src="/js/trumbowyg/langs/pt.min.js"></script>
 @endsection
 
+@section('navbar')
+  @include('partials._navbar')
+@endsection
+
 @section('content')
 
   <div id="content">
@@ -25,18 +29,20 @@
           <div class="col-md-9">
             <div class="edit-form">
               <h2>Editar publicação</h2>
-              @include('partials._form')
+              <div class="form-wrap">
+                @include('partials._form')
+              </div>
             </div>
           </div>
           <div class="col-md-3">
             <div class="sidebar">
               <dl>
                 <dt>Criada em:</dt>
-                <dd>{{ date('d M Y \à\s H:i:s', strtotime($post->created_at)) }}</dd>
+                <dd>{{ date('d/m/Y \à\s H:i:s', strtotime($post->created_at)) }}</dd>
               </dl>
               <dl>
                 <dt>Última edição em:</dt>
-                <dd>{{ date('d M Y \à\s H:i:s', strtotime($post->updated_at)) }}</dd>
+                <dd>{{ date('d/m/Y \à\s H:i:s', strtotime($post->updated_at)) }}</dd>
               </dl>
               <hr>
               <div class="row">

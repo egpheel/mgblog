@@ -149,6 +149,31 @@ textarea {
 .swal2-modal {
   font-family: "Open Sans", sans-serif; }
 
+.btn {
+  color: #333333; }
+  .btn:visited {
+    color: #333333; }
+
+.btn-primary {
+  color: white; }
+  .btn-primary:visited {
+    color: white; }
+
+.btn-success {
+  color: white; }
+  .btn-success:visited {
+    color: white; }
+
+.btn-danger {
+  color: white; }
+  .btn-danger:visited {
+    color: white; }
+
+.read-more {
+  color: white; }
+  .read-more:visited {
+    color: white; }
+
 .header-bar {
   margin-top: 0;
   height: 3px;
@@ -267,14 +292,17 @@ a.dropdown-toggle {
 #content .edit-form {
   margin: 35px; }
 
-#create .form-wrap .form-control {
+#create .form-wrap .form-control, #content .form-wrap .form-control {
   margin: 0px auto 15px; }
 
-#create .form-wrap .btn {
+#create .form-wrap .btn, #content .form-wrap .btn {
   margin: 0px auto 100px; }
 
-#create .form-wrap label {
+#create .form-wrap label, #content .form-wrap label {
   margin: 15px auto 0px; }
+
+.select2-container {
+  width: 100%; }
 
 .archive h1 {
   font-family: "Volkhov", serif;
@@ -666,6 +694,13 @@ a.dropdown-toggle {
   -o-align-items: center;
   align-items: center;
   -ms-flex-align: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
   padding: 20px;
   border-top: 1px solid rgba(182, 181, 175, 0.5);
   border-bottom: 1px solid rgba(182, 181, 175, 0.5); }
@@ -682,7 +717,7 @@ a.dropdown-toggle {
       height: 100%; }
   .author .author-desc {
     display: inline-block;
-    width: 500px;
+    width: 75%;
     padding-left: 30px;
     text-align: left;
     font-style: italic;

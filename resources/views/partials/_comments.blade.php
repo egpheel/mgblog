@@ -64,7 +64,7 @@
       {!! Form::open(['route' => ['comments.store', $post->id], 'data-parsley-validate' => '']) !!}
       <input type="hidden" class="req-details" data-name="{{ Auth::user()->name }}" data-img="{{ Auth::user()->avatar }}" data-userid="{{ Auth::user()->id }}" data-postid="{{ $post->id }}" data-admin="{{ Auth::user()->hasRole('admin') ? 'true' : 'false' }}">
       {!! Form::textarea('body', null, array('class'=> 'form-control new-comment', 'placeholder' => 'Escrever comentário', 'required' => '')) !!}
-      {!! Form::submit('Enviar', ['class' => 'read-more btn-block btn comment-btn']) !!}
+      {!! Form::submit('Enviar', ['class' => 'btn-block btn comment-btn read-more']) !!}
       {!! Form::close() !!}
     </div>
   @endif
