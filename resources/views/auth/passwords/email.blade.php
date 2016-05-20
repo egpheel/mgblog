@@ -24,7 +24,7 @@
       <div class="form-group">
         <div class="login-register-btn">
           <button type="submit" class="btn read-more">
-            Enviar link de redifinição de palavra-passe
+            Enviar link
           </button>
         </div>
       </div>
