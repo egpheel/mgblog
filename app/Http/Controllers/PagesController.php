@@ -27,7 +27,7 @@ class PagesController extends Controller {
   public function getArchives()
   {
     $archives = Post::latest('publish_at')->published()->get()->groupBy(function($date) {
-      return translateMonth($date->created_at->month) . ' ' . $date->created_at->format('Y');
+      return translateMonth($date->publish_at->month) . ' ' . $date->publish_at->format('Y');
     });
 
     foreach ($archives as $archive=>$arc) {
@@ -47,13 +47,5 @@ class PagesController extends Controller {
   public function getPesquisar()
   {
     return view('pages.results', compact('post'));
-  }
-
-  /**
-   * Get the search results.
-   */
-  public function getResults(Request $request)
-  {
-    return $request;
   }
 }

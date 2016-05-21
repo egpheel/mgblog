@@ -40,7 +40,7 @@
           <div class="post">
             <div class="post-info">
               <p class="date">
-                <time datetime="{{ $post->created_at->toAtomString() }}">{{ $post->date }}</time>
+                <time datetime="{{ $post->publish_at->toAtomString() }}">{{ $post->date }}</time>
               </p>
               <h2>{{ $post->title }}</h2>
             </div>

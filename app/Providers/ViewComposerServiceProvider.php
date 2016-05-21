@@ -35,7 +35,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     private function composeFeatured()
     {
       view()->composer('pages.home', function($view) {
-        $featured = Post::where('featured', 1)->first();
+        $featured = Post::where('featured', 1)->published()->first();
 
         $view->with(compact('featured'));
       });
@@ -50,7 +50,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         $recent_posts = Post::latest('publish_at')->published()->take(6)->get();
 
         $archives = Post::latest('publish_at')->published()->get()->groupBy(function($date) {
-          return translateMonth($date->created_at->month) . ' ' . $date->created_at->format('Y');
+          return translateMonth($date->publish_at->month) . ' ' . $date->publish_at->format('Y');
         });
 
         $tags = Tag::with(['posts' => function($query) {

@@ -33,6 +33,12 @@ class QueryController extends Controller
       }
     })->published()->paginate(5);
 
+    foreach ($posts as $post) {
+      $date = $post->publish_at->day . ' ' . translateMonth($post->publish_at->month) . ' ' . $post->publish_at->year;
+
+      $post->date = $date;
+    }
+
     return view('pages.results', compact('posts', 'query'));
   }
 }

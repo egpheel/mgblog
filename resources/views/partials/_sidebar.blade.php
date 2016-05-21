@@ -3,7 +3,7 @@
   <ul>
     @foreach ($recent_posts as $post)
       <li>
-        <a href="{{ route('blog.publicacao', ['year' => $post->created_at->year, 'month' => $post->created_at->month, 'slug' => $post->slug]) }}">{{ $post->title }}</a>
+        <a href="{{ route('blog.publicacao', ['year' => $post->publish_at->year, 'month' => $post->publish_at->month, 'slug' => $post->slug]) }}">{{ $post->title }}</a>
       </li>
     @endforeach
   </ul>
@@ -23,7 +23,7 @@
   <ul>
     @foreach($archives as $archive=>$arc)
       <li>
-        <a href="{{ route('blog.arquivo', ['year' => $arc->first()->created_at->year, 'month' => $arc->first()->created_at->month]) }}">{{ $archive }}</a>
+        <a href="{{ route('blog.arquivo', ['year' => $arc->first()->publish_at->year, 'month' => $arc->first()->publish_at->month]) }}">{{ $archive }}</a>
       </li>
     @endforeach
   </ul>

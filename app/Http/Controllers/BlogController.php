@@ -14,9 +14,9 @@ class BlogController extends Controller
     public function getPublicacao($year, $month, $slug)
     {
       try {
-        $post = Post::whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->where('slug', '=', $slug)->published()->first();
+        $post = Post::whereYear('publish_at', '=', $year)->whereMonth('publish_at', '=', $month)->where('slug', '=', $slug)->published()->first();
 
-        $date = $post->created_at->day . ' ' . translateMonth($post->created_at->month) . ' ' . $post->created_at->year;
+        $date = $post->publish_at->day . ' ' . translateMonth($post->publish_at->month) . ' ' . $post->publish_at->year;
 
         $post->date = $date;
 
@@ -28,10 +28,10 @@ class BlogController extends Controller
 
     public function getArchive($year, $month)
     {
-      $posts = Post::latest('publish_at')->published()->whereYear('created_at', '=', $year)->whereMonth('created_at', '=', $month)->get();
+      $posts = Post::latest('publish_at')->published()->whereYear('publish_at', '=', $year)->whereMonth('publish_at', '=', $month)->get();
 
       foreach ($posts as $post) {
-        $date = $post->created_at->day . ' ' . translateMonth($post->created_at->month) . ' ' . $post->created_at->year;
+        $date = $post->publish_at->day . ' ' . translateMonth($post->publish_at->month) . ' ' . $post->publish_at->year;
 
         $post->date = $date;
       }
@@ -52,11 +52,11 @@ class BlogController extends Controller
       $posts = $tags->posts_paginated;
 
       foreach ($posts as $post) {
-        $date = $post->created_at->day . ' ' . translateMonth($post->created_at->month) . ' ' . $post->created_at->year;
+        $date = $post->publish_at->day . ' ' . translateMonth($post->publish_at->month) . ' ' . $post->publish_at->year;
 
         $post->date = $date;
       }
-      
+
       if ($posts->isEmpty()) {
         abort(404);
       } else {
