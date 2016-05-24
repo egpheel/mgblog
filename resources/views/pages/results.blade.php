@@ -17,24 +17,24 @@
   <section class="content results">
     <div class="featured beauty-bar">
       <hr>
-      <div class="img-wrap">
-        <img src="/{{ $random_post->photo }}" alt="{{ $random_post->title }}">
-      </div>
-      <hr>
-      <div class="featured-post-wrap">
-        <div class="searchBox-flex">
-          <div class="searchBox">
-            {!! Form::open(['route' => 'search.results', 'method' => 'GET', 'class' => 'searchForm form-inline']) !!}
-            <div class="input-group">
-              {!! Form::text('pesquisa', null, ['class' => 'searchBox-input form-control', 'placeholder' => 'Pesquisar']) !!}
-              <div class="input-group-btn">
-                {!! Form::button('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', ['type' => 'submit', 'class' => 'btn btn-default searchBox-btn']) !!}
+      <div class="img-wrap" style="background-image: url('/{{ $random_post->photo }}'); background-position: center center; background-repeat: no-repeat;">
+        {{--<img src="/{{ $random_post->photo }}" alt="{{ $random_post->title }}">--}}
+        <div class="featured-post-wrap">
+          <div class="searchBox-flex">
+            <div class="searchBox">
+              {!! Form::open(['route' => 'search.results', 'method' => 'GET', 'class' => 'searchForm form-inline']) !!}
+              <div class="input-group">
+                {!! Form::text('pesquisa', null, ['class' => 'searchBox-input form-control', 'placeholder' => 'Pesquisar']) !!}
+                <div class="input-group-btn">
+                  {!! Form::button('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', ['type' => 'submit', 'class' => 'btn btn-default searchBox-btn']) !!}
+                </div>
               </div>
+              {!! Form::close() !!}
             </div>
-            {!! Form::close() !!}
           </div>
         </div>
       </div>
+      <hr>
     </div>
     @if (isset($posts) && isset($query))
       <div class="posts-wrap row">
