@@ -36,4 +36,3 @@
     @endif
   </div>
 @endforeach
-{!! $posts->links() !!}
