@@ -36,4 +36,4 @@
     @endif
   </div>
 @endforeach
-{!! $posts->render() !!}
+{!! $posts->links() !!}
