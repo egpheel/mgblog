@@ -4,7 +4,7 @@ $(document).ready(function() {
     stickySidebar();
   });
 
-  (function(){
+  /*(function(){
 
       var loading_options = {
           finishedMsg: "<div class='end-msg'>Não existem mais publicações.</div>",
@@ -19,7 +19,7 @@ $(document).ready(function() {
         itemSelector: ".post",
         bufferPx: 1000
       });
-  })();
+  })();*/
 
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
