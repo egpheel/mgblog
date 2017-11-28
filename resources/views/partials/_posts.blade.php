@@ -30,10 +30,9 @@
           @endforeach
         </ul>
       @endunless
-      </div>
     </div>
     @if($post != $posts->last())
-      <hr>
+      <hr />
     @endif
   </div>
 @endforeach
