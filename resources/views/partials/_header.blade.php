@@ -2,6 +2,6 @@
 </div>
 <div class="header">
   <!-- <h1><a href="/">Marco Gil</a></h1> -->
-  <a href="/"><img src="/img/marco_b_w.png" width="200px"></a>
+  <a href="/"><img src="/img/marco_b_w_small.png"></a>
   <p><em>fotografias que contam histórias</em></p>
 </div>
